@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" fill="none">
+  <!-- SGD Architectural Monogram / Geometric Construction Icon -->
+  <g transform="translate(10, 10)">
+    <polygon points="30,5 56,20 30,35 4,20" fill="#EAB308" />
+    <polygon points="4,20 30,35 30,58 4,43" fill="#CA8A04" />
+    <polygon points="56,20 30,35 30,58 56,43" fill="#FACC15" />
+    <!-- Dynamic structural beam overlays -->
+    <path d="M12 25 L30 35 L48 25" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M30 35 L30 55" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <!-- SGD Brand Text -->
+  <text x="82" y="38" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" letter-spacing="2">
+    SGD<tspan fill="#EAB308">.</tspan>
+  </text>
+  <text x="170" y="38" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="700" fill="#E2E8F0" letter-spacing="3.5">
+    CONSTRUCTION
+  </text>
+  <!-- Sub-label -->
+  <text x="84" y="55" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#94A3B8" letter-spacing="1.8">
+    PT SUNGGIARDI PRIMA KONSTRUKSI
+  </text>
+</svg>
