@@ -141,6 +141,71 @@ get_header();
     </div>
 </section>
 
+<!-- Leadership & Lead Engineering Team -->
+<section class="sgd-section bg-slate">
+    <div class="sgd-container">
+        <div class="sgd-section-header text-center">
+            <div class="sgd-section-tag">STRUKTUR KEPEMIMPINAN</div>
+            <h2 class="sgd-section-heading">Dewan Direksi & Tenaga Ahli Teknik SGD</h2>
+            <p class="sgd-section-subheading">Didukung oleh para praktisi teknik sipil, arsitek profesional, dan project manager berpengalaman lintas proyek nasional.</p>
+        </div>
+
+        <div class="sgd-team-grid">
+            <div class="sgd-team-card">
+                <div class="sgd-team-avatar">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <h4>Ir. Sunggiardi, S.T., M.T.</h4>
+                <span class="sgd-team-role">Managing Director / Direktur Utama</span>
+                <p>Spesialis rekayasa struktur beton bertulang & manajemen risiko proyek dengan pengalaman 20+ tahun di industri konstruksi Indonesia.</p>
+                <div class="sgd-team-creds">
+                    <span><i class="fa-solid fa-certificate"></i> SKA Utama Struktur</span>
+                    <span><i class="fa-solid fa-id-badge"></i> Anggota HAKI & PII</span>
+                </div>
+            </div>
+
+            <div class="sgd-team-card">
+                <div class="sgd-team-avatar">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                </div>
+                <h4>Rizky Pratama, S.Ars., IAI</h4>
+                <span class="sgd-team-role">Head of Architecture & Design</span>
+                <p>Memimpin perencanaan konsep arsitektur kontemporer, pemodelan BIM 3D, dan koordinasi perizinan teknis (PBG & SLF) gedung bertingkat.</p>
+                <div class="sgd-team-creds">
+                    <span><i class="fa-solid fa-certificate"></i> IAI Registered Architect</span>
+                    <span><i class="fa-solid fa-id-badge"></i> Green Building Professional</span>
+                </div>
+            </div>
+
+            <div class="sgd-team-card">
+                <div class="sgd-team-avatar">
+                    <i class="fa-solid fa-helmet-safety"></i>
+                </div>
+                <h4>Hendrik Santoso, S.T.</h4>
+                <span class="sgd-team-role">Project Operations & Site Director</span>
+                <p>Penanggung jawab operasional lapangan, pengendalian kurva-S, logistik rantai pasok material, dan kepatuhan standar SMK3 Zero Accident.</p>
+                <div class="sgd-team-creds">
+                    <span><i class="fa-solid fa-certificate"></i> Ahli K3 Konstruksi Madya</span>
+                    <span><i class="fa-solid fa-id-badge"></i> Sertifikasi Manajemen Mutu</span>
+                </div>
+            </div>
+
+            <div class="sgd-team-card">
+                <div class="sgd-team-avatar">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+                <h4>Dedi Gunawan, S.T.</h4>
+                <span class="sgd-team-role">Head of SGD Care Maintenance</span>
+                <p>Mengkoordinasikan tim pemeliharaan berkala aset gedung komersial, audit struktur berkala, dan penanganan cepat kebocoran serta MEP.</p>
+                <div class="sgd-team-creds">
+                    <span><i class="fa-solid fa-certificate"></i> Ahli MEP & HVAC Central</span>
+                    <span><i class="fa-solid fa-id-badge"></i> Sertifikat BAST & Retensi</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Safety & Standards Banner -->
 <section class="sgd-section bg-dark text-white">
     <div class="sgd-container">

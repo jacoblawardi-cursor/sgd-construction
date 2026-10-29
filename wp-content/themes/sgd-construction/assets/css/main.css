@@ -337,6 +337,13 @@ ul {
 .sgd-logo-img {
     height: 48px;
     width: auto;
+    object-fit: contain;
+    display: block;
+    transition: var(--sgd-transition);
+}
+.sgd-logo-img:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
 }
 
 .sgd-nav-links {
@@ -932,6 +939,67 @@ ul {
 .sgd-service-link:hover {
     color: var(--sgd-gold-600);
     gap: 12px;
+}
+
+/* SGD Care Custom Brand Elements */
+.sgd-care-logo-wrap {
+    margin-bottom: 16px;
+    display: inline-block;
+}
+.sgd-care-logo-horizontal {
+    height: 40px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    display: block;
+}
+.sgd-care-badge-overlay {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    height: 36px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(234, 179, 8, 0.4);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    z-index: 2;
+}
+.sgd-care-badge-overlay img {
+    height: 22px;
+    width: auto;
+    object-fit: contain;
+}
+.sgd-value-icon-care {
+    width: auto !important;
+    min-width: 52px;
+    padding: 6px 12px !important;
+    background: rgba(15, 23, 42, 0.04);
+    border-radius: var(--sgd-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sgd-care-value-icon {
+    height: 28px;
+    width: auto;
+    max-width: 130px;
+    object-fit: contain;
+    display: block;
+}
+.sgd-care-detail-brand {
+    margin-bottom: 16px;
+}
+.sgd-care-detail-logo {
+    height: 48px;
+    width: auto;
+    max-width: 260px;
+    object-fit: contain;
+    display: block;
 }
 
 /* Service Detail In-Depth Rows */
@@ -1816,9 +1884,15 @@ ul {
     gap: 48px;
 }
 .sgd-footer-logo-img {
-    height: 44px;
+    height: 48px;
     width: auto;
+    object-fit: contain;
     margin-bottom: 20px;
+    display: block;
+    transition: var(--sgd-transition);
+}
+.sgd-footer-logo-img:hover {
+    filter: brightness(1.1);
 }
 .sgd-footer-desc {
     color: var(--sgd-slate-400);
@@ -2485,5 +2559,1010 @@ ul {
     }
     .sgd-modal-body {
         padding: 20px;
+    }
+}
+
+
+/* ==========================================================================
+   ENTERPRISE CORPORATE ADDITIONS (SGD CONSTRUCTION)
+   Language Switcher, Cost Estimator, Case Study Tabs, Before/After Slider,
+   Profile Modal, Compliance, Partners & FAQ
+   ========================================================================== */
+
+/* Gold Buttons & Variations */
+.sgd-btn-gold {
+    background-color: var(--sgd-gold-500);
+    color: var(--sgd-primary-950);
+    border: 1px solid var(--sgd-gold-500);
+    font-weight: 700;
+}
+.sgd-btn-gold:hover {
+    background-color: var(--sgd-gold-400);
+    color: var(--sgd-primary-950);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(234, 179, 8, 0.35);
+}
+.sgd-btn-outline-gold {
+    background-color: transparent;
+    color: var(--sgd-gold-500);
+    border: 1.5px solid var(--sgd-gold-500);
+    font-weight: 600;
+}
+.sgd-btn-outline-gold:hover {
+    background-color: var(--sgd-gold-500);
+    color: var(--sgd-primary-950);
+    transform: translateY(-2px);
+}
+
+/* Bilingual Language Switcher */
+.sgd-lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 2px 8px;
+}
+.sgd-lang-btn {
+    background: none;
+    border: none;
+    color: var(--sgd-slate-300);
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 2px 4px;
+    transition: var(--sgd-transition);
+}
+.sgd-lang-btn.active, .sgd-lang-btn:hover {
+    color: var(--sgd-gold-400);
+}
+.sgd-lang-sep {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 0.75rem;
+}
+.sgd-drawer-lang-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--sgd-slate-200);
+    background: var(--sgd-slate-50);
+}
+.sgd-drawer-lang-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--sgd-primary-800);
+}
+.sgd-drawer-lang-bar .sgd-lang-switcher {
+    background: #fff;
+    border-color: var(--sgd-slate-300);
+}
+.sgd-drawer-lang-bar .sgd-lang-btn {
+    color: var(--sgd-primary-600);
+}
+.sgd-drawer-lang-bar .sgd-lang-btn.active {
+    color: var(--sgd-gold-600);
+    font-weight: 800;
+}
+.sgd-drawer-cta-action {
+    padding: 16px 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Construction Cost Estimator
+   -------------------------------------------------------------------------- */
+.sgd-section-estimator {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--sgd-slate-50) 100%);
+}
+.sgd-estimator-card {
+    background: #FFFFFF;
+    border: 1px solid var(--sgd-slate-200);
+    border-radius: var(--sgd-radius-xl);
+    box-shadow: var(--sgd-shadow-xl);
+    overflow: hidden;
+    margin-top: 40px;
+}
+.sgd-estimator-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.95fr;
+}
+.sgd-estimator-controls {
+    padding: 40px;
+    border-right: 1px solid var(--sgd-slate-200);
+}
+.sgd-est-step {
+    margin-bottom: 32px;
+}
+.sgd-est-step:last-child {
+    margin-bottom: 0;
+}
+.sgd-est-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--sgd-primary-900);
+    margin-bottom: 16px;
+}
+.sgd-est-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--sgd-primary-900);
+    color: var(--sgd-gold-400);
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+.sgd-est-types-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+.sgd-est-type-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 16px;
+    border: 1.5px solid var(--sgd-slate-200);
+    border-radius: var(--sgd-radius-md);
+    background: #FFFFFF;
+    cursor: pointer;
+    transition: var(--sgd-transition);
+    text-align: left;
+}
+.sgd-est-type-btn i {
+    font-size: 1.4rem;
+    color: var(--sgd-primary-700);
+    margin-bottom: 8px;
+    transition: var(--sgd-transition);
+}
+.sgd-est-type-btn strong {
+    font-size: 0.92rem;
+    color: var(--sgd-primary-900);
+    display: block;
+}
+.sgd-est-type-btn small {
+    font-size: 0.72rem;
+    color: var(--sgd-primary-600);
+    line-height: 1.3;
+    margin-top: 2px;
+}
+.sgd-est-type-btn:hover {
+    border-color: var(--sgd-primary-800);
+    transform: translateY(-2px);
+}
+.sgd-est-type-btn.active {
+    border-color: var(--sgd-primary-900);
+    background: var(--sgd-primary-950);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15);
+}
+.sgd-est-type-btn.active i, .sgd-est-type-btn.active strong {
+    color: var(--sgd-gold-400);
+}
+.sgd-est-type-btn.active small {
+    color: var(--sgd-slate-300);
+}
+.sgd-est-input-wrap {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--sgd-primary-800);
+    border-radius: var(--sgd-radius-md);
+    padding: 4px 12px;
+    background: #FFFFFF;
+}
+.sgd-est-num-input {
+    border: none;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--sgd-primary-950);
+    width: 100px;
+    text-align: right;
+    outline: none;
+}
+.sgd-est-unit {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--sgd-primary-600);
+    margin-left: 6px;
+}
+.sgd-est-range-slider {
+    width: 100%;
+    margin: 16px 0 8px 0;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--sgd-slate-200);
+    outline: none;
+    accent-color: var(--sgd-gold-500);
+    cursor: pointer;
+}
+.sgd-range-limits {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--sgd-slate-400);
+    font-weight: 600;
+}
+.sgd-est-grades-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+.sgd-est-grade-btn {
+    position: relative;
+    padding: 16px;
+    border: 1.5px solid var(--sgd-slate-200);
+    border-radius: var(--sgd-radius-md);
+    background: #FFFFFF;
+    cursor: pointer;
+    transition: var(--sgd-transition);
+    text-align: left;
+}
+.sgd-grade-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--sgd-slate-100);
+    color: var(--sgd-primary-700);
+    margin-bottom: 6px;
+}
+.sgd-badge-popular {
+    background: var(--sgd-gold-100);
+    color: var(--sgd-gold-600);
+}
+.sgd-badge-luxury {
+    background: #EDE9FE;
+    color: #6D28D9;
+}
+.sgd-est-grade-btn strong {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--sgd-primary-900);
+    margin-bottom: 4px;
+}
+.sgd-est-grade-btn small {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--sgd-primary-600);
+    line-height: 1.4;
+}
+.sgd-est-grade-btn:hover {
+    border-color: var(--sgd-primary-800);
+    transform: translateY(-2px);
+}
+.sgd-est-grade-btn.active {
+    border-color: var(--sgd-gold-500);
+    background: #FFFEF7;
+    box-shadow: 0 4px 12px rgba(234, 179, 8, 0.15);
+}
+
+/* Estimator Live Summary */
+.sgd-estimator-summary {
+    background: var(--sgd-primary-950);
+    color: #FFFFFF;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sgd-summary-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--sgd-gold-400);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+.sgd-est-cost-display {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--sgd-radius-lg);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+.sgd-cost-label {
+    font-size: 0.85rem;
+    color: var(--sgd-slate-300);
+    display: block;
+    margin-bottom: 6px;
+}
+.sgd-cost-val {
+    font-size: 1.95rem;
+    font-weight: 900;
+    color: var(--sgd-gold-400);
+    font-family: var(--sgd-font-heading);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+.sgd-cost-sub {
+    font-size: 0.85rem;
+    color: var(--sgd-slate-300);
+    margin-top: 6px;
+}
+.sgd-est-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+.sgd-est-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.sgd-est-detail-item i {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(234, 179, 8, 0.15);
+    color: var(--sgd-gold-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+.sgd-detail-title {
+    font-size: 0.78rem;
+    color: var(--sgd-slate-400);
+    display: block;
+}
+.sgd-est-detail-item strong {
+    font-size: 0.92rem;
+    color: #FFFFFF;
+}
+.sgd-est-disclaimer {
+    font-size: 0.72rem;
+    color: var(--sgd-slate-400);
+    line-height: 1.4;
+    margin-top: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   Corporate Trust, Legalities & Strategic Supply Chain Partners
+   -------------------------------------------------------------------------- */
+.sgd-compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+.sgd-compliance-card {
+    background: #FFFFFF;
+    border: 1px solid var(--sgd-slate-200);
+    border-radius: var(--sgd-radius-lg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--sgd-transition);
+}
+.sgd-compliance-card:hover {
+    border-color: var(--sgd-primary-800);
+    transform: translateY(-4px);
+    box-shadow: var(--sgd-shadow-md);
+}
+.sgd-compliance-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--sgd-primary-950);
+    color: var(--sgd-gold-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+}
+.sgd-compliance-num {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--sgd-gold-600);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 4px;
+}
+.sgd-compliance-body h4 {
+    font-size: 1.05rem;
+    color: var(--sgd-primary-950);
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+.sgd-compliance-body p {
+    font-size: 0.85rem;
+    color: var(--sgd-primary-600);
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+.sgd-compliance-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #15803D;
+    background: #DCFCE7;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+/* Safety & Quality Milestone Strip */
+.sgd-milestone-strip {
+    margin-top: 36px;
+    background: var(--sgd-primary-900);
+    color: #FFFFFF;
+    border-radius: var(--sgd-radius-lg);
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sgd-milestone-item {
+    text-align: center;
+    flex: 1;
+}
+.sgd-milestone-val {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--sgd-gold-400);
+    font-family: var(--sgd-font-heading);
+    display: block;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+.sgd-milestone-label {
+    font-size: 0.82rem;
+    color: var(--sgd-slate-300);
+    font-weight: 500;
+}
+.sgd-milestone-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Supply Chain Partner Pills Grid */
+.sgd-partners-wrapper {
+    margin-top: 40px;
+}
+.sgd-partners-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--sgd-primary-800);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.sgd-partner-pills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.sgd-partner-pill {
+    background: #FFFFFF;
+    border: 1px solid var(--sgd-slate-200);
+    border-radius: var(--sgd-radius-md);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: var(--sgd-transition);
+}
+.sgd-partner-pill:hover {
+    border-color: var(--sgd-gold-500);
+    transform: translateY(-2px);
+    box-shadow: var(--sgd-shadow-sm);
+}
+.sgd-partner-pill i {
+    font-size: 1.3rem;
+    color: var(--sgd-primary-700);
+}
+.sgd-partner-pill strong {
+    font-size: 0.85rem;
+    color: var(--sgd-primary-950);
+    display: block;
+}
+.sgd-partner-pill span {
+    font-size: 0.72rem;
+    color: var(--sgd-primary-600);
+    display: block;
+}
+
+/* Digital Transparency Controls */
+.sgd-transparency-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--sgd-radius-xl);
+    padding: 36px 40px;
+}
+.sgd-transparency-header {
+    margin-bottom: 24px;
+}
+.sgd-transparency-header h3 {
+    font-size: 1.45rem;
+    color: #FFFFFF;
+    font-weight: 800;
+    margin: 8px 0 6px 0;
+}
+.sgd-transparency-header p {
+    font-size: 0.9rem;
+    color: var(--sgd-slate-300);
+}
+.sgd-transparency-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.sgd-transparency-item {
+    display: flex;
+    gap: 14px;
+}
+.sgd-transparency-item i {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(234, 179, 8, 0.15);
+    color: var(--sgd-gold-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+.sgd-transparency-item h4 {
+    font-size: 0.95rem;
+    color: #FFFFFF;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.sgd-transparency-item p {
+    font-size: 0.8rem;
+    color: var(--sgd-slate-300);
+    line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Case Study Tabs, CSR Cards & Before/After Slider
+   -------------------------------------------------------------------------- */
+.sgd-modal-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 12px 30px;
+    background: var(--sgd-slate-100);
+    border-bottom: 1px solid var(--sgd-slate-200);
+}
+.sgd-modal-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: var(--sgd-radius-md);
+    background: none;
+    border: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--sgd-primary-700);
+    cursor: pointer;
+    transition: var(--sgd-transition);
+}
+.sgd-modal-tab-btn:hover {
+    color: var(--sgd-primary-950);
+    background: rgba(255, 255, 255, 0.6);
+}
+.sgd-modal-tab-btn.active {
+    background: #FFFFFF;
+    color: var(--sgd-primary-950);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.sgd-tab-pane {
+    display: none;
+}
+.sgd-tab-pane.active {
+    display: block;
+    animation: sgdFadeIn 0.25s ease-out;
+}
+
+/* CSR Flow Cards */
+.sgd-case-study-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 10px 0;
+}
+.sgd-csr-card {
+    border-radius: var(--sgd-radius-lg);
+    padding: 20px 24px;
+    border-left: 5px solid;
+    background: #FFFFFF;
+    box-shadow: var(--sgd-shadow-sm);
+}
+.sgd-csr-challenge {
+    border-color: #E11D48;
+    background: #FFF1F2;
+}
+.sgd-csr-solution {
+    border-color: #0284C7;
+    background: #F0F9FF;
+}
+.sgd-csr-result {
+    border-color: #16A34A;
+    background: #F0FDF4;
+}
+.sgd-csr-badge {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+.sgd-csr-challenge .sgd-csr-badge { color: #BE123C; }
+.sgd-csr-solution .sgd-csr-badge { color: #0369A1; }
+.sgd-csr-result .sgd-csr-badge { color: #15803D; }
+
+.sgd-csr-card h4 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--sgd-primary-950);
+    margin-bottom: 6px;
+}
+.sgd-csr-card p {
+    font-size: 0.92rem;
+    color: var(--sgd-primary-800);
+    line-height: 1.6;
+}
+
+/* Before & After Interactive Comparison Slider */
+.sgd-ba-container {
+    padding: 10px 0;
+}
+.sgd-ba-instruction {
+    font-size: 0.85rem;
+    color: var(--sgd-primary-600);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.sgd-ba-slider {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    border-radius: var(--sgd-radius-lg);
+    box-shadow: var(--sgd-shadow-md);
+    cursor: ew-resize;
+    user-select: none;
+}
+.sgd-ba-img-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sgd-ba-before-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+    border-right: 2px solid #FFFFFF;
+}
+.sgd-ba-img-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: none;
+}
+.sgd-ba-tag {
+    position: absolute;
+    bottom: 16px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 4;
+}
+.sgd-ba-tag-before { left: 16px; }
+.sgd-ba-tag-after  { right: 16px; }
+
+.sgd-ba-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #FFFFFF;
+    z-index: 5;
+    transform: translateX(-50%);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sgd-ba-handle-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    color: var(--sgd-primary-950);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   Company Profile Download Lead Modal
+   -------------------------------------------------------------------------- */
+.sgd-profile-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--sgd-transition);
+}
+.sgd-profile-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+.sgd-profile-modal-dialog {
+    background: #FFFFFF;
+    border-radius: var(--sgd-radius-xl);
+    width: 90%;
+    max-width: 620px;
+    box-shadow: var(--sgd-shadow-xl);
+    z-index: 2;
+    overflow: hidden;
+    position: relative;
+    max-height: 92vh;
+    overflow-y: auto;
+}
+.sgd-profile-modal-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #FEF9C3;
+    color: #CA8A04;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+.sgd-modal-sublead {
+    font-size: 0.88rem;
+    color: var(--sgd-primary-600);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.sgd-form-privacy-note {
+    font-size: 0.72rem;
+    color: var(--sgd-slate-400);
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   Leadership Team (page-about)
+   -------------------------------------------------------------------------- */
+.sgd-team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+.sgd-team-card {
+    background: #FFFFFF;
+    border: 1px solid var(--sgd-slate-200);
+    border-radius: var(--sgd-radius-lg);
+    padding: 28px 20px;
+    text-align: center;
+    transition: var(--sgd-transition);
+}
+.sgd-team-card:hover {
+    border-color: var(--sgd-primary-800);
+    transform: translateY(-4px);
+    box-shadow: var(--sgd-shadow-md);
+}
+.sgd-team-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--sgd-primary-950);
+    color: var(--sgd-gold-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 16px auto;
+}
+.sgd-team-card h4 {
+    font-size: 1.05rem;
+    color: var(--sgd-primary-950);
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+.sgd-team-role {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--sgd-gold-600);
+    display: block;
+    margin-bottom: 12px;
+}
+.sgd-team-card p {
+    font-size: 0.82rem;
+    color: var(--sgd-primary-600);
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+.sgd-team-creds {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--sgd-primary-700);
+    background: var(--sgd-slate-50);
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Corporate FAQ Section
+   -------------------------------------------------------------------------- */
+.sgd-faq-wrapper {
+    max-width: 860px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.sgd-faq-item {
+    background: #FFFFFF;
+    border: 1px solid var(--sgd-slate-200);
+    border-radius: var(--sgd-radius-md);
+    overflow: hidden;
+    transition: var(--sgd-transition);
+}
+.sgd-faq-item.active {
+    border-color: var(--sgd-primary-800);
+    box-shadow: var(--sgd-shadow-sm);
+}
+.sgd-faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--sgd-primary-900);
+    cursor: pointer;
+    transition: var(--sgd-transition);
+}
+.sgd-faq-question i {
+    font-size: 0.9rem;
+    color: var(--sgd-primary-600);
+    transition: transform 0.25s ease;
+    margin-left: 16px;
+}
+.sgd-faq-item.active .sgd-faq-question i {
+    transform: rotate(180deg);
+    color: var(--sgd-gold-600);
+}
+.sgd-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+    background: var(--sgd-slate-50);
+}
+.sgd-faq-item.active .sgd-faq-answer {
+    max-height: 300px;
+    transition: max-height 0.4s ease-in;
+    padding: 0 24px 20px 24px;
+}
+.sgd-faq-answer p {
+    font-size: 0.92rem;
+    color: var(--sgd-primary-700);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments for Enterprise Features
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .sgd-estimator-grid {
+        grid-template-columns: 1fr;
+    }
+    .sgd-estimator-controls {
+        border-right: none;
+        border-bottom: 1px solid var(--sgd-slate-200);
+    }
+    .sgd-compliance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sgd-partner-pills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sgd-transparency-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sgd-team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sgd-est-types-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .sgd-est-grades-grid {
+        grid-template-columns: 1fr;
+    }
+    .sgd-compliance-grid {
+        grid-template-columns: 1fr;
+    }
+    .sgd-partner-pills-grid {
+        grid-template-columns: 1fr;
+    }
+    .sgd-milestone-strip {
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px;
+    }
+    .sgd-milestone-divider {
+        width: 60px;
+        height: 1px;
+    }
+    .sgd-transparency-grid {
+        grid-template-columns: 1fr;
+    }
+    .sgd-team-grid {
+        grid-template-columns: 1fr;
+    }
+    .sgd-modal-tabs {
+        padding: 8px 16px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .sgd-modal-tab-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    .sgd-ba-slider {
+        height: 250px;
     }
 }

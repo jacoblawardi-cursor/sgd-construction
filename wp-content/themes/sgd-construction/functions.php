@@ -135,6 +135,9 @@ function sgd_get_projects() {
             $status     = get_post_meta( $p->ID, '_sgd_project_status', true ) ?: 'Selesai & Diserahterimakan';
             $client     = get_post_meta( $p->ID, '_sgd_project_client', true ) ?: '-';
             $scope      = get_post_meta( $p->ID, '_sgd_project_scope', true ) ?: '-';
+            $challenge  = get_post_meta( $p->ID, '_sgd_project_challenge', true ) ?: '';
+            $solution   = get_post_meta( $p->ID, '_sgd_project_solution', true ) ?: '';
+            $result     = get_post_meta( $p->ID, '_sgd_project_result', true ) ?: '';
 
             // Highlights (split by line)
             $hl_raw = get_post_meta( $p->ID, '_sgd_project_highlights', true );
@@ -181,6 +184,9 @@ function sgd_get_projects() {
                 'client'         => $client,
                 'status'         => $status,
                 'scope'          => $scope,
+                'challenge'      => $challenge,
+                'solution'       => $solution,
+                'result'         => $result,
                 'desc'           => ! empty( $p->post_content ) ? wp_strip_all_tags( $p->post_content ) : $p->post_excerpt,
                 'highlights'     => $highlights,
                 'images'         => $images,
@@ -203,6 +209,9 @@ function sgd_get_projects() {
             'client'         => 'PT Graha Perkasa Land',
             'status'         => 'Selesai & Diserahterimakan',
             'scope'          => 'Struktur Beton Bertulang (K-500), Fasad Curtain Wall Low-E & MEP Terintegrasi',
+            'challenge'      => 'Akses lokasi di jalur protokol utama Jakarta Pusat yang padat dengan restriksi jam kerja alat berat ketat, batas lahan bersinggungan langsung dengan bangunan tetangga, serta muka air tanah tinggi.',
+            'solution'       => 'Penerapan sistem secant pile perimeter cut-off wall penahan air tanah, metode top-down excavation bertahap, dan mobilisasi material malam hari dengan manajemen lalu lintas terkoordinasi.',
+            'result'         => 'Selesai 100% tepat waktu sesuai milestone kurva-S, tanpa ada settlement pada gedung sekitar, dan perolehan sertifikasi Green Building efisiensi energi 28%.',
             'desc'           => 'Pembangunan gedung perkantoran komersial 18 lantai di kawasan bisnis Jakarta Pusat. Dirancang dengan struktur beton bertulang mutu tinggi tahan gempa, double-glazed curtain wall system untuk insulasi panas dan hemat energi, serta sistem proteksi kebakaran dan MEP terintegrasi standar high-rise building.',
             'highlights'     => array(
                 'Pondasi Bored Pile kedalaman 36 meter dengan uji integritas PDA & PIT 100% lolos verifikasi.',
@@ -228,6 +237,9 @@ function sgd_get_projects() {
             'client'         => 'Private Family Estate',
             'status'         => 'Selesai & Diserahterimakan',
             'scope'          => 'Rancang Bangun Total (Design & Build), Kolam Renang Kantilever & Interior Marmer',
+            'challenge'      => 'Kontur lereng bukit curam dengan ancaman kestabilan lereng saat curah hujan ekstrem, serta permintaan arsitektural infinity pool kantilever tanpa kolom tumpuan di bagian bawah.',
+            'solution'       => 'Pemasangan retaining wall berjenjang sistem soil nailing geoteknik bersertifikat dan balok beton prategang (post-tension) kantilever menggantung sejauh 4 meter ke arah lembah.',
+            'result'         => 'Struktur lereng 100% kokoh dengan faktor keamanan geoteknik FK > 1,8, mewujudkan kolam renang melayang spektakuler tanpa retak rambut struktur.',
             'desc'           => 'Hunian mewah tropis kontemporer di lereng Sentul Selatan dengan view pegunungan panoramik. Dilengkapi infinity pool kantilever menggantung tanpa tiang bawah, rekayasa retaining wall lereng bukit stabil, dan finishing marmer Statuario impor Italia.',
             'highlights'     => array(
                 'Rekayasa geoteknik retaining wall bertingkat dengan sistem soil nailing untuk stabilitas lereng bukit.',
@@ -253,6 +265,15 @@ function sgd_get_projects() {
             'client'         => 'Corporate Group Holding',
             'status'         => 'Selesai & Diserahterimakan',
             'scope'          => 'Desain Interior, Fit-Out Akustik, Custom Furniture, Raised Floor Sistem & Tata Cahaya',
+            'challenge'      => 'Batas waktu pengerjaan cepat hanya 90 hari kalender pada gedung perkantoran aktif dengan regulasi jam kerja hening (zero-noise) di jam operasional normal.',
+            'solution'       => 'Pelaksanaan sistem double-shift malam (off-peak) dan pra-fabrikasi modular presisi di workshop SGD sehingga proses instalasi fisik di site berlangsung 45% lebih singkat.',
+            'result'         => 'Serah terima (BAST) 5 hari lebih cepat dari tenggat, uji insulasi suara boardroom lolos STC 48 dB, dan zero disturbance pada penyewa lantai lain.',
+            'before_after'   => array(
+                'before'       => $img_uri . '/service-interior.jpg',
+                'after'        => $img_uri . '/project-3.jpg',
+                'before_label' => 'Kondisi Ruang Kosong Awal',
+                'after_label'  => 'Hasil Fit-Out Korporat Modern'
+            ),
             'desc'           => 'Transformasi interior ruang kerja korporat modern dengan partisi kaca akustik kedap suara, ceiling baffle kayu arsitektural, ruang kolaboratif terbuka, dan furniture ergonomis kustom berstandar internasional.',
             'highlights'     => array(
                 'Pengerjaan fit-out cepat 90 hari kalender dengan sistem shift malam tanpa mengganggu operasional gedung.',
@@ -278,6 +299,9 @@ function sgd_get_projects() {
             'client'         => 'Global Logistics Provider',
             'status'         => 'Selesai & Diserahterimakan',
             'scope'          => 'Konstruksi Baja WF Bentang Lebar, Lantai Hardener Heavy-Duty & Loading Dock Hidrolik',
+            'challenge'      => 'Kebutuhan bentang struktur bebas kolom tengah 45 meter dengan ketahanan beban dinamis lantai 10 ton/m² untuk racking vertikal 7 level dan forklift bertonase tinggi.',
+            'solution'       => 'Struktur portal baja WF bentang lebar berkekuatan tinggi dengan baut mutu tinggi A325, serta pengecoran seamless slab beton K-350 menggunakan metallic floor hardener non-shrink.',
+            'result'         => 'Lantai rata berspesifikasi Superflat F-min 75, siap operasional otomatisasi pergudangan tanpa risiko penurunan lantai, diserahterimakan on-budget.',
             'desc'           => 'Pembangunan komplek pergudangan logistik modern berbentang lebar 45 meter bebas kolom tengah. Dilengkapi lantai cor beton bertulang floor hardener anti-debu dengan ketahanan beban dinamis 10 ton/m² serta 16 pintu loading dock otomatis.',
             'highlights'     => array(
                 'Rangka baja bentang lebar 45 meter bebas kolom tengah untuk efisiensi manuver forklift dan racking bertingkat.',
@@ -303,6 +327,9 @@ function sgd_get_projects() {
             'client'         => 'Hospitality & Lifestyle Group',
             'status'         => 'Selesai & Diserahterimakan',
             'scope'          => 'Struktur Baja Ekspos, Fasad Roster Kustom, Grease Trap Komersial & Lansekap',
+            'challenge'      => 'Integrasi fasilitas restoran F&B berdaya listrik tinggi dan limbah minyak komersial dengan konsep arsitektur semi-outdoor terbuka bernilai estetika premium.',
+            'solution'       => 'Instalasi sistem grease trap terpusat standar dinas lingkungan hidup DKI Jakarta di bawah tanah, dipadu kanopi baja ekspos anti-korosi dan fasad roster peredam radiasi matahari.',
+            'result'         => 'Destinasi komersial beroperasi penuh dengan izin lingkungan lengkap (AMDAL/UKL-UPL) dan sirkulasi alami yang menyejukkan interior resto.',
             'desc'           => 'Destinasi komersial multi-tenant semi-outdoor dengan perpaduan struktur baja ekspos elegan dan fasad roster artistik. Dirancang ramah ventilasi alami dengan fasilitas restoran komprehensif berstandar DKI Jakarta.',
             'highlights'     => array(
                 'Perpaduan arsitektur baja ekspos dengan fasad roster terakota yang memaksimalkan sirkulasi udara alami.',
@@ -328,6 +355,9 @@ function sgd_get_projects() {
             'client'         => 'Private Owner',
             'status'         => 'Selesai & Diserahterimakan',
             'scope'          => 'Pondasi Tiang Pancang Tahan Sulfat, Struktur Kedap Air, Rooftop Lounge & Smart Home',
+            'challenge'      => 'Kondisi tanah rawa pesisir berkadar garam dan sulfat tinggi yang dapat mempercepat korosi beton dan besi tulangan.',
+            'solution'       => 'Pondasi tiang pancang mini pile bersertifikasi semen tahan sulfat Type V, pelapisan epoxy rebar anti-korosi, serta waterproofing multi-lapis pada seluruh elevasi bawah tanah.',
+            'result'         => 'Jaminan daya tahan struktur lebih dari 50 tahun terhadap agresi garam laut, bebas rembesan air tanah 100%.',
             'desc'           => 'Rumah tinggal 3 lantai berarsitektur modern tropis tepi danau PIK 2. Dirancang dengan fondasi tiang pancang khusus kawasan pesisir, waterproofing membrane 4 lapis, dan sistem otomasi rumah pintar terintegrasi.',
             'highlights'     => array(
                 'Struktur pondasi mini pile beton K-400 dengan semen tahan sulfat khusus kawasan tepi laut.',
@@ -353,6 +383,15 @@ function sgd_get_projects() {
             'client'         => 'PT Sunggiardi Corp Ecosystem',
             'status'         => 'Selesai & Diserahterimakan',
             'scope'          => 'Revitalisasi Struktur, Fasad ACP Fire-Retardant, Basement Parkir & Lift Penumpang',
+            'challenge'      => 'Gedung eksisting membutuhkan penguatan struktur kolom dan balok untuk menampung lift penumpang baru serta lantai kerja tambahan tanpa membongkar rangka dasar.',
+            'solution'       => 'Metode perkuatan struktur modern Carbon Fiber Reinforced Polymer (CFRP) wrapping pada 16 titik kolom utama, serta penggantian fasad lama dengan ACP tahan api berinsulasi.',
+            'result'         => 'Daya dukung struktur naik 40% tanpa penambahan dimensi kolom yang memakan ruang, menghemat biaya renovasi 60% dibanding pembangunan ulang.',
+            'before_after'   => array(
+                'before'       => $img_uri . '/about-company.jpg',
+                'after'        => $img_uri . '/project-1.jpg',
+                'before_label' => 'Fasad & Rangka Bangunan Lama',
+                'after_label'  => 'Hasil Revitalisasi Kantor Modern'
+            ),
             'desc'           => 'Pembangunan dan modernisasi unit ruko komersial 4 lantai lengkap dengan basement parkir, sistem lift penumpang, fasad modern tahan cuaca, dan sistem proteksi kebakaran terintegrasi.',
             'highlights'     => array(
                 'Perkuatan struktur kolom eksisting menggunakan metode Carbon Fiber Reinforced Polymer (CFRP).',
@@ -473,6 +512,45 @@ function sgd_handle_contact_submission() {
 }
 add_action( 'wp_ajax_sgd_submit_contact', 'sgd_handle_contact_submission' );
 add_action( 'wp_ajax_nopriv_sgd_submit_contact', 'sgd_handle_contact_submission' );
+
+/**
+ * Handle AJAX Company Profile Download & Lead Capture
+ */
+function sgd_handle_profile_download() {
+    check_ajax_referer( 'sgd_contact_nonce', 'nonce' );
+
+    $name    = sanitize_text_field( $_POST['name'] ?? '' );
+    $company = sanitize_text_field( $_POST['company'] ?? '-' );
+    $phone   = sanitize_text_field( $_POST['phone'] ?? '' );
+    $email   = sanitize_email( $_POST['email'] ?? '' );
+    $project = sanitize_text_field( $_POST['project_interest'] ?? 'Corporate Deck' );
+
+    if ( empty( $name ) || empty( $phone ) ) {
+        wp_send_json_error( array( 'message' => 'Harap lengkapi Nama dan Nomor WhatsApp Anda.' ) );
+    }
+
+    // Direct WhatsApp message with lead intent
+    $wa_text = urlencode( "Halo SGD Construction,\nSaya {$name} dari {$company} ({$phone})\nEmail: {$email}\nBaru saja mengunduh Company Profile SGD (Minat: {$project}). Mohon dapat dihubungi untuk konsultasi lebih lanjut." );
+    $wa_url  = "https://wa.me/" . SGD_PHONE_INTL . "?text=" . $wa_text;
+
+    // Email notification to management
+    $to = SGD_EMAIL;
+    $subject = "Download Company Profile Baru: {$name} - {$company}";
+    $body = "Download Company Profile:\nNama: {$name}\nPerusahaan: {$company}\nWhatsApp: {$phone}\nEmail: {$email}\nMinat: {$project}\n\n---\nLead dari Website sgd-corp.com";
+    $headers = array('Content-Type: text/plain; charset=UTF-8');
+    wp_mail( $to, $subject, $body, $headers );
+
+    // Profile Document URL (Can be real PDF or dynamic digital deck)
+    $profile_url = SGD_THEME_URI . '/assets/images/about-company.jpg';
+
+    wp_send_json_success( array(
+        'message'     => 'Terima kasih, ' . esc_html( $name ) . '! Dokumen Company Profile SGD Construction siap diakses.',
+        'downloadUrl' => $profile_url,
+        'waUrl'       => $wa_url
+    ) );
+}
+add_action( 'wp_ajax_sgd_download_profile', 'sgd_handle_profile_download' );
+add_action( 'wp_ajax_nopriv_sgd_download_profile', 'sgd_handle_profile_download' );
 
 /**
  * Helper: Generate WhatsApp consultation link

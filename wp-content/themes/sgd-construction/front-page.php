@@ -28,11 +28,15 @@ get_header();
             <div class="sgd-hero-actions">
                 <a href="<?php echo esc_url( sgd_get_wa_link('Halo SGD Construction, saya ingin berkonsultasi mengenai rencana proyek konstruksi.') ); ?>" target="_blank" rel="noopener noreferrer" class="sgd-btn sgd-btn-whatsapp sgd-btn-lg">
                     <i class="fa-brands fa-whatsapp"></i>
-                    <span>Konsultasi Proyek (08116016868)</span>
+                    <span data-i18n-id="Konsultasi Proyek (08116016868)" data-i18n-en="Project Consultation (WA)">Konsultasi Proyek (08116016868)</span>
                 </a>
+                <button type="button" class="sgd-btn sgd-btn-gold sgd-btn-lg" data-modal="profile">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span data-i18n-id="Download Company Profile (PDF)" data-i18n-en="Download Company Deck (PDF)">Download Company Profile (PDF)</span>
+                </button>
                 <a href="<?php echo esc_url( home_url( '/portfolio/' ) ); ?>" class="sgd-btn sgd-btn-outline-white sgd-btn-lg">
                     <i class="fa-solid fa-layer-group"></i>
-                    <span>Lihat Portofolio Proyek</span>
+                    <span data-i18n-id="Lihat Portofolio Proyek" data-i18n-en="View Projects Portfolio">Lihat Portofolio Proyek</span>
                 </a>
             </div>
         </div>
@@ -211,9 +215,14 @@ get_header();
                 <div class="sgd-service-thumb">
                     <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/service-care.jpg' ); ?>" alt="SGD Care: Building Maintenance">
                     <span class="sgd-service-number">05</span>
+                    <div class="sgd-care-badge-overlay" title="SGD Care Unit">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/SGD CARE Horizontal.png' ); ?>" alt="SGD Care">
+                    </div>
                 </div>
                 <div class="sgd-service-body">
-                    <div class="sgd-service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <div class="sgd-care-logo-wrap">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/SGD CARE Horizontal.png' ); ?>" alt="SGD Care Logo" class="sgd-care-logo-horizontal">
+                    </div>
                     <div class="sgd-badge-mini">SPECIAL UNIT</div>
                     <h3>SGD Care: Property Maintenance</h3>
                     <p>Unit khusus pemeliharaan berkala gedung, kantor, dan rumah tinggal. Menangani perbaikan sipil cepat, water leakage, kelistrikan, dan servis AC.</p>
@@ -234,6 +243,157 @@ get_header();
                 <span>Eksplorasi Semua Detail Layanan Kami</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
+        </div>
+    </div>
+</section>
+
+<!-- 3.5 INTERACTIVE CONSTRUCTION COST ESTIMATOR -->
+<section class="sgd-section sgd-section-estimator bg-white" id="estimatorSection">
+    <div class="sgd-container">
+        <div class="sgd-section-header text-center">
+            <div class="sgd-section-tag sgd-tag-gold">ESTIMASI ANGGARAN CEPAT & TRANSPARAN</div>
+            <h2 class="sgd-section-heading">Kalkulator Estimasi Biaya Konstruksi & Rancang Bangun</h2>
+            <p class="sgd-section-subheading">Dapatkan gambaran awal estimasi biaya dan durasi proyek Anda secara instan dalam 3 langkah mudah sebelum konsultasi teknis mendalam bersama tim engineer SGD.</p>
+        </div>
+
+        <div class="sgd-estimator-card">
+            <div class="sgd-estimator-grid">
+                <!-- Left: Interactive Controls -->
+                <div class="sgd-estimator-controls">
+                    <!-- Step 1: Project Type -->
+                    <div class="sgd-est-step">
+                        <label class="sgd-est-label">
+                            <span class="sgd-est-step-num">1</span>
+                            <span>Pilih Kategori / Tipe Proyek:</span>
+                        </label>
+                        <div class="sgd-est-types-grid" id="sgdEstTypes">
+                            <button type="button" class="sgd-est-type-btn active" data-type="commercial" data-rate-std="5500000" data-rate-prem="7200000" data-rate-lux="9500000" data-speed="140">
+                                <i class="fa-solid fa-building"></i>
+                                <strong>Gedung / Kantor</strong>
+                                <small>Komersial, Ruko & Plaza</small>
+                            </button>
+                            <button type="button" class="sgd-est-type-btn" data-type="residential" data-rate-std="6500000" data-rate-prem="8800000" data-rate-lux="12000000" data-speed="100">
+                                <i class="fa-solid fa-house-chimney"></i>
+                                <strong>Residensial Mewah</strong>
+                                <small>Rumah Tinggal & Villa</small>
+                            </button>
+                            <button type="button" class="sgd-est-type-btn" data-type="interior" data-rate-std="3200000" data-rate-prem="4800000" data-rate-lux="7000000" data-speed="300">
+                                <i class="fa-solid fa-couch"></i>
+                                <strong>Interior Fit-Out</strong>
+                                <small>Office, Retail & Custom</small>
+                            </button>
+                            <button type="button" class="sgd-est-type-btn" data-type="industrial" data-rate-std="3800000" data-rate-prem="5200000" data-rate-lux="6800000" data-speed="600">
+                                <i class="fa-solid fa-warehouse"></i>
+                                <strong>Gudang / Pabrik</strong>
+                                <small>Konstruksi Baja Bentang</small>
+                            </button>
+                            <button type="button" class="sgd-est-type-btn" data-type="care" data-rate-std="550000" data-rate-prem="950000" data-rate-lux="1400000" data-speed="800">
+                                <i class="fa-solid fa-wrench"></i>
+                                <strong>SGD Care AMC</strong>
+                                <small>Maintenance Kontrak</small>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Area Slider & Input -->
+                    <div class="sgd-est-step">
+                        <div class="sgd-d-flex sgd-justify-between sgd-items-center sgd-mb-2">
+                            <label class="sgd-est-label sgd-mb-0" for="sgdEstAreaInput">
+                                <span class="sgd-est-step-num">2</span>
+                                <span>Estimasi Luas Area (GFA):</span>
+                            </label>
+                            <div class="sgd-est-input-wrap">
+                                <input type="number" id="sgdEstAreaInput" class="sgd-est-num-input" value="500" min="50" max="25000" step="25">
+                                <span class="sgd-est-unit">m²</span>
+                            </div>
+                        </div>
+                        <input type="range" id="sgdEstAreaSlider" class="sgd-est-range-slider" value="500" min="50" max="5000" step="25">
+                        <div class="sgd-range-limits">
+                            <span>50 m²</span>
+                            <span>1.000 m²</span>
+                            <span>2.500 m²</span>
+                            <span>5.000+ m²</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Material Specification Grade -->
+                    <div class="sgd-est-step">
+                        <label class="sgd-est-label">
+                            <span class="sgd-est-step-num">3</span>
+                            <span>Tingkat Spesifikasi Material & Finishing:</span>
+                        </label>
+                        <div class="sgd-est-grades-grid" id="sgdEstGrades">
+                            <button type="button" class="sgd-est-grade-btn" data-grade="standard">
+                                <span class="sgd-grade-badge">Standard</span>
+                                <strong>Standar Korporat SNI</strong>
+                                <small>Material kokoh teruji SNI, sanitair standar, cat tahan cuaca.</small>
+                            </button>
+                            <button type="button" class="sgd-est-grade-btn active" data-grade="premium">
+                                <span class="sgd-grade-badge sgd-badge-popular">Populer</span>
+                                <strong>Premium Commercial</strong>
+                                <small>Granit tile 80x80/100x100, kusen YKK, Toto sanitair, cat Jotun/Dulux.</small>
+                            </button>
+                            <button type="button" class="sgd-est-grade-btn" data-grade="luxury">
+                                <span class="sgd-grade-badge sgd-badge-luxury">Luxury</span>
+                                <strong>Luxury / High-End</strong>
+                                <small>Slab marmer impor Italia, smart building automation, curtain wall Low-E.</small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Real-time Live Calculation Results -->
+                <div class="sgd-estimator-summary">
+                    <div class="sgd-summary-badge">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>HASIL KALKULASI ESTIMASI</span>
+                    </div>
+
+                    <div class="sgd-est-cost-display">
+                        <span class="sgd-cost-label">Perkiraan Rentang Anggaran:</span>
+                        <div class="sgd-cost-val" id="sgdEstCostRange">Rp 3,4 Milyar - Rp 3,8 Milyar</div>
+                        <div class="sgd-cost-sub" id="sgdEstRatePerM2">Rata-rata: Rp 7.200.000 / m²</div>
+                    </div>
+
+                    <div class="sgd-est-details-list">
+                        <div class="sgd-est-detail-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <div>
+                                <span class="sgd-detail-title">Estimasi Durasi Kerja:</span>
+                                <strong id="sgdEstDuration">5 - 7 Bulan</strong>
+                            </div>
+                        </div>
+                        <div class="sgd-est-detail-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div>
+                                <span class="sgd-detail-title">Jaminan & Kualitas:</span>
+                                <strong>Garansi Struktur + Sertifikat SMK3</strong>
+                            </div>
+                        </div>
+                        <div class="sgd-est-detail-item">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                            <div>
+                                <span class="sgd-detail-title">Sistem Kontrak:</span>
+                                <strong>Fixed Cost (Bebas Biaya Tak Terduga)</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sgd-est-actions">
+                        <a href="#" id="sgdEstWaBtn" target="_blank" rel="noopener noreferrer" class="sgd-btn sgd-btn-whatsapp sgd-btn-lg sgd-w-100">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Kirim Rincian Estimasi ke WA Estimator</span>
+                        </a>
+                        <button type="button" class="sgd-btn sgd-btn-outline sgd-w-100 sgd-mt-2" data-modal="profile">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Download Corporate Deck & Spesifikasi</span>
+                        </button>
+                    </div>
+                    <p class="sgd-est-disclaimer">
+                        *Anggaran di atas merupakan estimasi awal berdasarkan luas dan mutu finishing. Nilai riil akan ditentukan setelah survey lapangan dan penyusunan Rencana Anggaran Biaya (RAB) definitif.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -275,6 +435,139 @@ get_header();
     </div>
 </section>
 
+<!-- 4.5 CORPORATE TRUST, LEGALITIES & STRATEGIC PARTNERS -->
+<section class="sgd-section sgd-section-compliance bg-slate">
+    <div class="sgd-container">
+        <div class="sgd-section-header text-center">
+            <div class="sgd-section-tag">LEGALITAS & STANDAR KUALITAS KORPORAT</div>
+            <h2 class="sgd-section-heading">Kepatuhan Regulasi Penuh & Kemitraan Rantai Pasok Teruji</h2>
+            <p class="sgd-section-subheading">Sebagai kontraktor berbadan hukum resmi PT Sunggiardi Prima Konstruksi, kami mematuhi seluruh perizinan nasional dan bermitra dengan produsen material tier-1 untuk menjamin ketahanan bangunan Anda.</p>
+        </div>
+
+        <!-- Compliance & Badges Grid -->
+        <div class="sgd-compliance-grid">
+            <div class="sgd-compliance-card">
+                <div class="sgd-compliance-icon"><i class="fa-solid fa-stamp"></i></div>
+                <div class="sgd-compliance-body">
+                    <span class="sgd-compliance-num">BADAN HUKUM RESMI</span>
+                    <h4>PT Sunggiardi Prima Konstruksi</h4>
+                    <p>Terdaftar resmi di Kemenkumham RI dengan NIB & Izin Usaha Jasa Konstruksi (IUJK / OSS-RBA) aktif.</p>
+                    <span class="sgd-compliance-check"><i class="fa-solid fa-circle-check"></i> Terverifikasi Legal</span>
+                </div>
+            </div>
+
+            <div class="sgd-compliance-card">
+                <div class="sgd-compliance-icon"><i class="fa-solid fa-hard-hat"></i></div>
+                <div class="sgd-compliance-body">
+                    <span class="sgd-compliance-num">SMK3 & KESELAMATAN</span>
+                    <h4>Standar K3 / SMK3 (PP 50/2012)</h4>
+                    <p>Protokol Sistem Manajemen K3 ketat di setiap site proyek dengan komitmen Zero Accident.</p>
+                    <span class="sgd-compliance-check"><i class="fa-solid fa-circle-check"></i> Zero Lost Time Injury</span>
+                </div>
+            </div>
+
+            <div class="sgd-compliance-card">
+                <div class="sgd-compliance-icon"><i class="fa-solid fa-certificate"></i></div>
+                <div class="sgd-compliance-body">
+                    <span class="sgd-compliance-num">STANDAR MUTU SNI</span>
+                    <h4>ISO 9001:2015 Quality System</h4>
+                    <p>Standarisasi pengujian laboratorium mutu beton (slump & cylinder test) serta uji tarik baja berkala.</p>
+                    <span class="sgd-compliance-check"><i class="fa-solid fa-circle-check"></i> 100% SNI Compliant</span>
+                </div>
+            </div>
+
+            <div class="sgd-compliance-card">
+                <div class="sgd-compliance-icon"><i class="fa-solid fa-id-card-clip"></i></div>
+                <div class="sgd-compliance-body">
+                    <span class="sgd-compliance-num">TENAGA AHLI LPJK</span>
+                    <h4>Engineer SKA / SKK Bersertifikat</h4>
+                    <p>Site Manager, Quality Control, dan Ahli Struktur terdaftar di asosiasi profesi resmi (HAKI, IAI, PII).</p>
+                    <span class="sgd-compliance-check"><i class="fa-solid fa-circle-check"></i> Sertifikasi Nasional</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Safety & Quality Milestone Strip -->
+        <div class="sgd-milestone-strip">
+            <div class="sgd-milestone-item">
+                <span class="sgd-milestone-val">350.000+</span>
+                <span class="sgd-milestone-label">Jam Kerja Aman (Safe Man-Hours)</span>
+            </div>
+            <div class="sgd-milestone-divider"></div>
+            <div class="sgd-milestone-item">
+                <span class="sgd-milestone-val">100%</span>
+                <span class="sgd-milestone-label">Lolos Uji Tekan Laboratorium KAN</span>
+            </div>
+            <div class="sgd-milestone-divider"></div>
+            <div class="sgd-milestone-item">
+                <span class="sgd-milestone-val">0</span>
+                <span class="sgd-milestone-label">Kasus Fatality (Zero Major Accident)</span>
+            </div>
+            <div class="sgd-milestone-divider"></div>
+            <div class="sgd-milestone-item">
+                <span class="sgd-milestone-val">5 Tahun</span>
+                <span class="sgd-milestone-label">Garansi Pemeliharaan Kebocoran & Struktur</span>
+            </div>
+        </div>
+
+        <!-- Tier-1 Supply Chain & Vendor Partners -->
+        <div class="sgd-partners-wrapper">
+            <h4 class="sgd-partners-title">Mitra Produsen Material & Rantai Pasok Resmi SGD:</h4>
+            <div class="sgd-partner-pills-grid">
+                <div class="sgd-partner-pill">
+                    <i class="fa-solid fa-cubes-stacked"></i>
+                    <div>
+                        <strong>Krakatau Steel</strong>
+                        <span>Baja Tulangan SNI</span>
+                    </div>
+                </div>
+                <div class="sgd-partner-pill">
+                    <i class="fa-solid fa-trowel"></i>
+                    <div>
+                        <strong>Semen Indonesia (SIG) / Holcim</strong>
+                        <span>Ready-Mix & Semen Tahan Sulfat</span>
+                    </div>
+                </div>
+                <div class="sgd-partner-pill">
+                    <i class="fa-solid fa-faucet-drip"></i>
+                    <div>
+                        <strong>TOTO Indonesia</strong>
+                        <span>Sanitair Komersial & Residensial</span>
+                    </div>
+                </div>
+                <div class="sgd-partner-pill">
+                    <i class="fa-solid fa-bolt"></i>
+                    <div>
+                        <strong>Schneider Electric</strong>
+                        <span>Panel Kelistrikan & Proteksi MEP</span>
+                    </div>
+                </div>
+                <div class="sgd-partner-pill">
+                    <i class="fa-solid fa-paint-roller"></i>
+                    <div>
+                        <strong>Jotun / Dulux / Propan</strong>
+                        <span>Cat Arsitektural & Waterproofing</span>
+                    </div>
+                </div>
+                <div class="sgd-partner-pill">
+                    <i class="fa-solid fa-snowflake"></i>
+                    <div>
+                        <strong>Daikin / Panasonic VRV</strong>
+                        <span>Tata Udara HVAC Komersial</span>
+                    </div>
+                </div>
+                <div class="sgd-partner-pill">
+                    <i class="fa-solid fa-border-all"></i>
+                    <div>
+                        <strong>YKK AP Aluminium</strong>
+                        <span>Kusen & Fasad Arsitektural</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- 5. WORK PROCESS / METHODOLOGY -->
 <section class="sgd-section sgd-section-process bg-dark text-white">
     <div class="sgd-container">
@@ -309,6 +602,45 @@ get_header();
                 <div class="sgd-step-number">05</div>
                 <h4>Serah Terima & Garansi Pemeliharaan</h4>
                 <p>Berita acara serah terima (BAST) setelah inspeksi final, penyerahan as-built drawing, serta masa garansi pemeliharaan struktural.</p>
+            </div>
+        </div>
+
+        <!-- Digital Transparency & Construction Intelligence Strip -->
+        <div class="sgd-transparency-box sgd-mt-5">
+            <div class="sgd-transparency-header">
+                <div class="sgd-badge-accent"><i class="fa-solid fa-satellite-dish"></i> MODERN PROJECT CONTROLS</div>
+                <h3>Transparansi Penuh untuk Pemilik Proyek & Komite Korporat</h3>
+                <p>Kami menghilangkan kekhawatiran klasik keterlambatan dan biaya siluman dengan ekosistem pelaporan digital modern:</p>
+            </div>
+            <div class="sgd-transparency-grid">
+                <div class="sgd-transparency-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div>
+                        <h4>Kurva-S & Laporan Digital Mingguan</h4>
+                        <p>Pemantauan deviasi progress fisik vs rencana kerja secara berkala yang dikirimkan langsung ke manajemen owner.</p>
+                    </div>
+                </div>
+                <div class="sgd-transparency-item">
+                    <i class="fa-solid fa-helicopter"></i>
+                    <div>
+                        <h4>Dokumentasi Drone Aerial Berkala</h4>
+                        <p>Inspeksi elevasi atap, struktur bentang tinggi, dan perkembangan tapak proyek dengan foto/video resolusi tinggi 4K.</p>
+                    </div>
+                </div>
+                <div class="sgd-transparency-item">
+                    <i class="fa-solid fa-vial-circle-check"></i>
+                    <div>
+                        <h4>Pengujian Uji Laboratorium KAN</h4>
+                        <p>Uji slump on-site setiap batch cor, tes tekan silinder beton umur 7, 14, 28 hari, serta uji tarik besi tulangan.</p>
+                    </div>
+                </div>
+                <div class="sgd-transparency-item">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <div>
+                        <h4>Garansi Harga Kontrak (Fixed-Cost)</h4>
+                        <p>Perlindungan anggaran Anda dengan kontrak definitif tanpa kenaikan biaya sepihak di tengah proses pembangunan.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -348,7 +680,9 @@ get_header();
                         </div>
                     </div>
                     <div class="sgd-value-card">
-                        <div class="sgd-value-icon"><i class="fa-solid fa-headset"></i></div>
+                        <div class="sgd-value-icon sgd-value-icon-care">
+                            <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/SGD CARE Horizontal.png' ); ?>" alt="SGD Care" class="sgd-care-value-icon">
+                        </div>
                         <div>
                             <h4>SGD Care Dukungan Purna Jual</h4>
                             <p>Dukungan paska konstruksi melalui unit SGD Care untuk perawatan jangka panjang gedung dan properti Anda.</p>
@@ -382,6 +716,74 @@ get_header();
                             Kunjungi @sgdconstruction <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6.5 CORPORATE FAQ SECTION -->
+<section class="sgd-section sgd-section-faq bg-slate">
+    <div class="sgd-container">
+        <div class="sgd-section-header text-center">
+            <div class="sgd-section-tag">PERTANYAAN UMUM KLIEN (FAQ)</div>
+            <h2 class="sgd-section-heading">Informasi Seputar Layanan & Prosedur Kontrak SGD</h2>
+            <p class="sgd-section-subheading">Pertanyaan paling sering diajukan oleh pemilik properti, pengembang, dan komite pengadaan korporat.</p>
+        </div>
+
+        <div class="sgd-faq-wrapper">
+            <!-- FAQ Item 1 -->
+            <div class="sgd-faq-item">
+                <button type="button" class="sgd-faq-question" aria-expanded="false">
+                    <span>Apakah PT Sunggiardi Prima Konstruksi melayani pengurusan perizinan (PBG & SLF)?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="sgd-faq-answer">
+                    <p><strong>Ya, tentu.</strong> Kami menyediakan layanan terintegrasi *One-Stop Solution* mulai dari penyusunan gambar teknis kerja arsitektur, perhitungan kalkulasi struktur bersertifikat (TABG/SimBG), kajian tata lingkungan, hingga penerbitan Persetujuan Bangunan Gedung (PBG) dan Sertifikat Laik Fungsi (SLF) di dinas terkait.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="sgd-faq-item">
+                <button type="button" class="sgd-faq-question" aria-expanded="false">
+                    <span>Bagaimana mekanisme termin pembayaran kontrak konstruksi di SGD?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="sgd-faq-answer">
+                    <p>Pembayaran dilakukan secara bertahap (termin) sesuai kurva-S dan progres fisik lapangan yang diverifikasi bersama (*Joint Inspection*). Skema umum dimulai dari uang muka (DP), termin berkala per kelipatan progres (misal 25%, 50%, 75%, 100%), dan penahanan retensi pemeliharaan (3%–5%) hingga masa retensi berakhir dengan aman.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="sgd-faq-item">
+                <button type="button" class="sgd-faq-question" aria-expanded="false">
+                    <span>Berapa lama masa garansi pemeliharaan (retensi) yang diberikan?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="sgd-faq-answer">
+                    <p>Kami memberikan garansi pemeliharaan struktural hingga <strong>5 tahun</strong> untuk kekuatan struktur utama dan <strong>3 hingga 12 bulan</strong> untuk masa retensi pekerjaan arsitektural/finishing serta waterproofing. Segala perbaikan selama masa retensi didukung langsung oleh unit respons cepat <strong>SGD Care</strong>.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="sgd-faq-item">
+                <button type="button" class="sgd-faq-question" aria-expanded="false">
+                    <span>Bagaimana SGD menjamin proyek selesai on-time tanpa biaya tambahan tak terduga?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="sgd-faq-answer">
+                    <p>Kami mengikat komitmen melalui Surat Perjanjian Kerja (SPK) resmi bermaterai dengan skema *Fixed-Lump Sum*. Setiap tahapan diawasi menggunakan kurva-S digital ketat dengan mitigasi risiko cuaca dan suplai material sejak hari pertama, sehingga tanggal serah terima dijamin tepat waktu.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="sgd-faq-item">
+                <button type="button" class="sgd-faq-question" aria-expanded="false">
+                    <span>Apakah SGD melayani proyek di luar kawasan Jabodetabek?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="sgd-faq-answer">
+                    <p><strong>Ya.</strong> Meskipun basis operasional kami berada di Jakarta Barat, tim engineer SGD telah sukses menangani proyek di berbagai kawasan industri dan residensial di Jawa Barat, Banten, Jawa Tengah, Jawa Timur, hingga Bali dan Sumatera.</p>
                 </div>
             </div>
         </div>

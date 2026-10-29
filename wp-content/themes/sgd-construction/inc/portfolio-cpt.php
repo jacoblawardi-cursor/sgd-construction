@@ -120,6 +120,9 @@ function sgd_render_portfolio_meta_box( $post ) {
     $status     = get_post_meta( $post->ID, '_sgd_project_status', true ) ?: 'Selesai & Diserahterimakan';
     $client     = get_post_meta( $post->ID, '_sgd_project_client', true );
     $scope      = get_post_meta( $post->ID, '_sgd_project_scope', true );
+    $challenge  = get_post_meta( $post->ID, '_sgd_project_challenge', true );
+    $solution   = get_post_meta( $post->ID, '_sgd_project_solution', true );
+    $result     = get_post_meta( $post->ID, '_sgd_project_result', true );
     $highlights = get_post_meta( $post->ID, '_sgd_project_highlights', true );
     $gallery    = get_post_meta( $post->ID, '_sgd_project_gallery', true );
     ?>
@@ -181,6 +184,27 @@ function sgd_render_portfolio_meta_box( $post ) {
             </td>
         </tr>
         <tr>
+            <th><label for="sgd_project_challenge">Tantangan Proyek (Engineering Challenge):</label></th>
+            <td>
+                <textarea id="sgd_project_challenge" name="sgd_project_challenge" rows="3" class="large-text" placeholder="Kendala teknis, kondisi tanah, akses lokasi padat, atau timeline ketat yang dihadapi..."><?php echo esc_textarea( $challenge ); ?></textarea>
+                <span class="sgd-meta-desc">Tantangan nyata sebelum atau saat pelaksanaan proyek.</span>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="sgd_project_solution">Solusi & Rekayasa Teknik SGD:</label></th>
+            <td>
+                <textarea id="sgd_project_solution" name="sgd_project_solution" rows="3" class="large-text" placeholder="Metode kerja khusus, inovasi material, rekayasa nilai (value engineering), dan solusi presisi tim SGD..."><?php echo esc_textarea( $solution ); ?></textarea>
+                <span class="sgd-meta-desc">Bagaimana tim engineering SGD memecahkan tantangan tersebut.</span>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="sgd_project_result">Hasil & Metrik Capaian (Delivered Result):</label></th>
+            <td>
+                <textarea id="sgd_project_result" name="sgd_project_result" rows="2" class="large-text" placeholder="Diserahterimakan 2 minggu lebih cepat, Zero Lost Time Accident, efisiensi energi 28%..."><?php echo esc_textarea( $result ); ?></textarea>
+                <span class="sgd-meta-desc">Dampak nyata dan hasil terukur yang dinikmati klien.</span>
+            </td>
+        </tr>
+        <tr>
             <th><label for="sgd_project_highlights">Capaian & Rekayasa Teknik:</label></th>
             <td>
                 <textarea id="sgd_project_highlights" name="sgd_project_highlights" rows="5" class="large-text" placeholder="Tuliskan 1 poin per baris:&#10;Pondasi Bored Pile kedalaman 36 meter dengan tes PDA lolos.&#10;Fasad hemat energi double-glazed low-e glass mereduksi radiasi panas.&#10;Zero-accident record sepanjang masa pengerjaan dengan protokol SMK3."><?php echo esc_textarea( $highlights ); ?></textarea>
@@ -222,13 +246,16 @@ function sgd_save_portfolio_meta_box( $post_id ) {
         'sgd_project_status'     => '_sgd_project_status',
         'sgd_project_client'     => '_sgd_project_client',
         'sgd_project_scope'      => '_sgd_project_scope',
+        'sgd_project_challenge'  => '_sgd_project_challenge',
+        'sgd_project_solution'   => '_sgd_project_solution',
+        'sgd_project_result'     => '_sgd_project_result',
         'sgd_project_highlights' => '_sgd_project_highlights',
         'sgd_project_gallery'    => '_sgd_project_gallery',
     );
 
     foreach ( $fields as $input_key => $meta_key ) {
         if ( isset( $_POST[ $input_key ] ) ) {
-            if ( in_array( $input_key, array( 'sgd_project_highlights', 'sgd_project_gallery', 'sgd_project_scope' ), true ) ) {
+            if ( in_array( $input_key, array( 'sgd_project_highlights', 'sgd_project_gallery', 'sgd_project_scope', 'sgd_project_challenge', 'sgd_project_solution', 'sgd_project_result' ), true ) ) {
                 update_post_meta( $post_id, $meta_key, sanitize_textarea_field( $_POST[ $input_key ] ) );
             } else {
                 update_post_meta( $post_id, $meta_key, sanitize_text_field( $_POST[ $input_key ] ) );

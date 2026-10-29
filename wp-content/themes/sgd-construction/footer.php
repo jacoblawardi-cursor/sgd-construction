@@ -18,6 +18,9 @@
                     <p>Dari konsep desain hingga serah terima bangunan, kami siap mewujudkan visi bangunan terbaik Anda dengan standar mutu dan keselamatan tertinggi.</p>
                 </div>
                 <div class="sgd-footer-cta-actions">
+                    <button type="button" class="sgd-btn sgd-btn-gold sgd-btn-lg" data-modal="profile">
+                        <i class="fa-solid fa-file-pdf"></i> Download Company Profile
+                    </button>
                     <a href="<?php echo esc_url( sgd_get_wa_link('Halo SGD Construction, saya ingin menjadwalkan konsultasi proyek.') ); ?>" target="_blank" rel="noopener noreferrer" class="sgd-btn sgd-btn-whatsapp sgd-btn-lg">
                         <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp 08116016868
                     </a>
@@ -36,7 +39,7 @@
                 <!-- Col 1: Brand Info -->
                 <div class="sgd-footer-col sgd-footer-col-about">
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="sgd-footer-logo">
-                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/logo.svg' ); ?>" alt="SGD Construction" class="sgd-footer-logo-img">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/Logo Landscape.png' ); ?>" alt="SGD Construction" class="sgd-footer-logo-img">
                     </a>
                     <p class="sgd-footer-desc">
                         <strong>PT Sunggiardi Prima Konstruksi (SGD Construction)</strong> adalah penyedia jasa konstruksi, arsitektur, kontraktor umum, dan interior berstandar profesional di Indonesia. Kami mengedepankan kualitas struktural, efisiensi waktu, dan transparansi anggaran.
@@ -158,7 +161,7 @@
     <i class="fa-solid fa-arrow-up"></i>
 </button>
 
-<!-- Project Details & Gallery Modal -->
+<!-- Enhanced Case Study & Project Details Modal -->
 <div class="sgd-project-modal" id="sgdProjectModal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="sgd-modal-backdrop" id="sgdModalBackdrop"></div>
     <div class="sgd-modal-dialog">
@@ -174,74 +177,136 @@
             </button>
         </div>
 
+        <!-- Case Study Nav Tabs -->
+        <div class="sgd-modal-tabs">
+            <button type="button" class="sgd-modal-tab-btn active" data-tab="overview">
+                <i class="fa-solid fa-circle-info"></i> Ringkasan & Spesifikasi
+            </button>
+            <button type="button" class="sgd-modal-tab-btn" data-tab="casestudy">
+                <i class="fa-solid fa-shield-halved"></i> Tantangan & Rekayasa Teknik
+            </button>
+            <button type="button" class="sgd-modal-tab-btn" data-tab="beforeafter" id="sgdModalTabBeforeAfter" style="display:none;">
+                <i class="fa-solid fa-sliders"></i> Sebelum vs Sesudah
+            </button>
+        </div>
+
         <!-- Modal Body -->
         <div class="sgd-modal-body">
-            <!-- Gallery Section -->
-            <div class="sgd-modal-gallery">
-                <div class="sgd-modal-active-img-wrap">
-                    <img id="sgdModalActiveImg" src="" alt="Detail Proyek SGD Construction">
-                    <span class="sgd-gallery-counter" id="sgdGalleryCounter">Foto 1 dari 3</span>
+            <!-- TAB 1: OVERVIEW -->
+            <div class="sgd-tab-pane active" id="sgdPaneOverview">
+                <!-- Gallery Section -->
+                <div class="sgd-modal-gallery">
+                    <div class="sgd-modal-active-img-wrap">
+                        <img id="sgdModalActiveImg" src="" alt="Detail Proyek SGD Construction">
+                        <span class="sgd-gallery-counter" id="sgdGalleryCounter">Foto 1 dari 3</span>
+                    </div>
+                    <div class="sgd-modal-thumbnails" id="sgdModalThumbnails">
+                        <!-- Dynamic thumbs inserted by JS -->
+                    </div>
                 </div>
-                <div class="sgd-modal-thumbnails" id="sgdModalThumbnails">
-                    <!-- Dynamic thumbs inserted by JS -->
+
+                <!-- Project Specs Strip -->
+                <div class="sgd-modal-specs-grid">
+                    <div class="sgd-modal-spec-card">
+                        <i class="fa-solid fa-ruler-combined"></i>
+                        <div>
+                            <span class="sgd-spec-label">Luas Bangunan</span>
+                            <strong id="sgdModalArea">-</strong>
+                        </div>
+                    </div>
+                    <div class="sgd-modal-spec-card">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <span class="sgd-spec-label">Durasi Kerja</span>
+                            <strong id="sgdModalDuration">-</strong>
+                        </div>
+                    </div>
+                    <div class="sgd-modal-spec-card">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <div>
+                            <span class="sgd-spec-label">Tahun Selesai</span>
+                            <strong id="sgdModalYear">-</strong>
+                        </div>
+                    </div>
+                    <div class="sgd-modal-spec-card">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div>
+                            <span class="sgd-spec-label">Status Serah Terima</span>
+                            <strong id="sgdModalStatus">-</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Narrative -->
+                <div class="sgd-modal-content-section">
+                    <div class="sgd-modal-meta-row">
+                        <div class="sgd-meta-item">
+                            <span class="sgd-meta-title">Klien / Pemilik Proyek:</span>
+                            <span class="sgd-meta-val" id="sgdModalClient">-</span>
+                        </div>
+                        <div class="sgd-meta-item">
+                            <span class="sgd-meta-title">Lingkup Pekerjaan:</span>
+                            <span class="sgd-meta-val" id="sgdModalScope">-</span>
+                        </div>
+                    </div>
+
+                    <div class="sgd-modal-desc-block">
+                        <h4>Ringkasan Eksekusi Proyek</h4>
+                        <p id="sgdModalDesc">-</p>
+                    </div>
+
+                    <div class="sgd-modal-highlights-block">
+                        <h4>Capaian & Rekayasa Teknik Utama:</h4>
+                        <ul class="sgd-modal-highlights-list" id="sgdModalHighlights">
+                            <!-- Dynamic list items -->
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <!-- Project Specs Strip -->
-            <div class="sgd-modal-specs-grid">
-                <div class="sgd-modal-spec-card">
-                    <i class="fa-solid fa-ruler-combined"></i>
-                    <div>
-                        <span class="sgd-spec-label">Luas Bangunan</span>
-                        <strong id="sgdModalArea">-</strong>
+            <!-- TAB 2: CASE STUDY (CHALLENGE - SOLUTION - RESULT) -->
+            <div class="sgd-tab-pane" id="sgdPaneCaseStudy">
+                <div class="sgd-case-study-flow">
+                    <!-- Challenge Card -->
+                    <div class="sgd-csr-card sgd-csr-challenge">
+                        <div class="sgd-csr-badge"><i class="fa-solid fa-triangle-exclamation"></i> TANTANGAN PROYEK (ENGINEERING CHALLENGE)</div>
+                        <h4>Kendala Lokasi, Struktur & Regulasi Waktu</h4>
+                        <p id="sgdModalChallenge">-</p>
                     </div>
-                </div>
-                <div class="sgd-modal-spec-card">
-                    <i class="fa-solid fa-clock"></i>
-                    <div>
-                        <span class="sgd-spec-label">Durasi Kerja</span>
-                        <strong id="sgdModalDuration">-</strong>
+
+                    <!-- Solution Card -->
+                    <div class="sgd-csr-card sgd-csr-solution">
+                        <div class="sgd-csr-badge"><i class="fa-solid fa-screwdriver-wrench"></i> REKAYASA TEKNIK & METODE KERJA SGD</div>
+                        <h4>Inovasi Material, Manajemen Shift & Rekayasa Nilai</h4>
+                        <p id="sgdModalSolution">-</p>
                     </div>
-                </div>
-                <div class="sgd-modal-spec-card">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <div>
-                        <span class="sgd-spec-label">Tahun Selesai</span>
-                        <strong id="sgdModalYear">-</strong>
-                    </div>
-                </div>
-                <div class="sgd-modal-spec-card">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <div>
-                        <span class="sgd-spec-label">Status Serah Terima</span>
-                        <strong id="sgdModalStatus">-</strong>
+
+                    <!-- Result Card -->
+                    <div class="sgd-csr-card sgd-csr-result">
+                        <div class="sgd-csr-badge"><i class="fa-solid fa-trophy"></i> HASIL & METRIK CAPAIAN (DELIVERED OUTCOME)</div>
+                        <h4>Ketepatan Waktu, Efisiensi Biaya & Kepatuhan Mutu SNI/K3</h4>
+                        <p id="sgdModalResult">-</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Detailed Narrative -->
-            <div class="sgd-modal-content-section">
-                <div class="sgd-modal-meta-row">
-                    <div class="sgd-meta-item">
-                        <span class="sgd-meta-title">Klien / Pemilik Proyek:</span>
-                        <span class="sgd-meta-val" id="sgdModalClient">-</span>
+            <!-- TAB 3: BEFORE & AFTER INTERACTIVE SLIDER -->
+            <div class="sgd-tab-pane" id="sgdPaneBeforeAfter">
+                <div class="sgd-ba-container">
+                    <p class="sgd-ba-instruction"><i class="fa-solid fa-arrows-left-right"></i> Geser divider ke kiri atau ke kanan untuk membandingkan transformasi proyek:</p>
+                    <div class="sgd-ba-slider" id="sgdBaSlider">
+                        <img id="sgdBaAfterImg" src="" alt="Sesudah Transformasi SGD" class="sgd-ba-img-after">
+                        <div class="sgd-ba-before-wrap" id="sgdBaBeforeWrap">
+                            <img id="sgdBaBeforeImg" src="" alt="Sebelum Transformasi SGD" class="sgd-ba-img-before">
+                            <span class="sgd-ba-tag sgd-ba-tag-before" id="sgdBaBeforeLabel">SEBELUM</span>
+                        </div>
+                        <span class="sgd-ba-tag sgd-ba-tag-after" id="sgdBaAfterLabel">SESUDAH</span>
+                        <div class="sgd-ba-handle" id="sgdBaHandle">
+                            <span class="sgd-ba-handle-line"></span>
+                            <span class="sgd-ba-handle-circle"><i class="fa-solid fa-arrows-left-right"></i></span>
+                            <span class="sgd-ba-handle-line"></span>
+                        </div>
                     </div>
-                    <div class="sgd-meta-item">
-                        <span class="sgd-meta-title">Lingkup Pekerjaan:</span>
-                        <span class="sgd-meta-val" id="sgdModalScope">-</span>
-                    </div>
-                </div>
-
-                <div class="sgd-modal-desc-block">
-                    <h4>Ringkasan Eksekusi Proyek</h4>
-                    <p id="sgdModalDesc">-</p>
-                </div>
-
-                <div class="sgd-modal-highlights-block">
-                    <h4>Capaian & Rekayasa Teknik Utama:</h4>
-                    <ul class="sgd-modal-highlights-list" id="sgdModalHighlights">
-                        <!-- Dynamic list items -->
-                    </ul>
                 </div>
             </div>
         </div>
@@ -255,6 +320,80 @@
             <button type="button" class="sgd-btn sgd-btn-outline" id="sgdModalCloseBtn">
                 Tutup
             </button>
+        </div>
+    </div>
+</div>
+
+<!-- Corporate Profile Download Lead Capture Modal -->
+<div class="sgd-profile-modal" id="sgdProfileModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="sgd-modal-backdrop" id="sgdProfileModalBackdrop"></div>
+    <div class="sgd-modal-dialog sgd-profile-modal-dialog">
+        <div class="sgd-modal-header sgd-border-0">
+            <div class="sgd-d-flex sgd-items-center sgd-gap-3">
+                <div class="sgd-profile-modal-icon">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <div>
+                    <span class="sgd-category-badge">OFFICIAL CORPORATE DOCUMENT</span>
+                    <h3 class="sgd-modal-title sgd-h3">Unduh Company Profile PT Sunggiardi Prima Konstruksi</h3>
+                </div>
+            </div>
+            <button type="button" class="sgd-modal-close" id="sgdProfileModalClose" aria-label="Tutup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="sgd-modal-body">
+            <p class="sgd-modal-sublead">
+                Dapatkan dokumen presentasi resmi kami yang mencakup: Portofolio proyek komersial & residensial, legalitas badan usaha, sertifikasi SMK3, metodologi konstruksi kurva-S, dan data kapabilitas rekayasa teknik SGD.
+            </p>
+
+            <form id="sgdProfileDownloadForm" class="sgd-profile-form">
+                <div class="sgd-form-row sgd-2col">
+                    <div class="sgd-form-group">
+                        <label for="profName">Nama Lengkap <span class="sgd-required">*</span></label>
+                        <input type="text" id="profName" name="name" class="sgd-input" placeholder="Contoh: Ir. Budi Santoso" required>
+                    </div>
+                    <div class="sgd-form-group">
+                        <label for="profCompany">Perusahaan / Instansi <span class="sgd-required">*</span></label>
+                        <input type="text" id="profCompany" name="company" class="sgd-input" placeholder="Contoh: PT Graha Mahakarya" required>
+                    </div>
+                </div>
+
+                <div class="sgd-form-row sgd-2col">
+                    <div class="sgd-form-group">
+                        <label for="profPhone">Nomor WhatsApp Aktif <span class="sgd-required">*</span></label>
+                        <input type="tel" id="profPhone" name="phone" class="sgd-input" placeholder="Contoh: 081234567890" required>
+                    </div>
+                    <div class="sgd-form-group">
+                        <label for="profEmail">Email Kantor / Pribadi</label>
+                        <input type="email" id="profEmail" name="email" class="sgd-input" placeholder="Contoh: budi@perusahaan.com">
+                    </div>
+                </div>
+
+                <div class="sgd-form-group">
+                    <label for="profInterest">Kebutuhan / Ketertarikan Proyek</label>
+                    <select id="profInterest" name="project_interest" class="sgd-input">
+                        <option value="Bangunan Komersial & Kantor">Pembangunan Gedung Komersial & Kantor</option>
+                        <option value="Residensial Mewah / Villa">Pembangunan Rumah Mewah / Villa</option>
+                        <option value="Interior Fit-Out Kantor">Interior Fit-Out & Renovasi Korporat</option>
+                        <option value="Gudang & Fasilitas Industri">Gudang / Fasilitas Industri Bentang Lebar</option>
+                        <option value="SGD Care Property Maintenance">SGD Care: Kontrak Pemeliharaan Gedung (AMC)</option>
+                        <option value="Kemitraan Vendor / Subkon">Kemitraan Vendor / Subkontraktor</option>
+                    </select>
+                </div>
+
+                <div id="sgdProfileFeedback" class="sgd-form-feedback" style="display:none;"></div>
+
+                <div class="sgd-profile-form-actions">
+                    <button type="submit" class="sgd-btn sgd-btn-gold sgd-btn-lg sgd-w-100" id="sgdProfileSubmitBtn">
+                        <i class="fa-solid fa-download"></i> Unduh Company Profile Resmi (PDF)
+                    </button>
+                    <p class="sgd-form-privacy-note">
+                        <i class="fa-solid fa-lock"></i> Informasi Anda terjamin kerahasiaannya dan hanya digunakan untuk keperluan pengiriman materi korporat SGD.
+                    </p>
+                </div>
+            </form>
         </div>
     </div>
 </div>

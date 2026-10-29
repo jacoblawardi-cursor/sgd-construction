@@ -161,7 +161,12 @@ get_header();
         <div class="sgd-service-detail-row" id="care">
             <div class="sgd-grid-2col sgd-items-center">
                 <div class="sgd-service-detail-text">
-                    <div class="sgd-badge-accent mb-2">DIVISI KHUSUS SGD CARE</div>
+                    <div class="sgd-care-detail-brand">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/SGD CARE Horizontal.png' ); ?>" alt="SGD Care Logo" class="sgd-care-detail-logo">
+                    </div>
+                    <div class="sgd-badge-accent mb-2">
+                        DIVISI KHUSUS MAINTENANCE
+                    </div>
                     <h2 class="sgd-service-title">SGD Care: Building & Property Maintenance</h2>
                     <p class="sgd-lead-text">
                         Investasi bangunan Anda layak mendapatkan perlindungan terbaik. Unit khusus <strong>SGD Care</strong> hadir menangani perawatan rutin, audit fisik bangunan berkala, dan perbaikan insidental secara profesional.

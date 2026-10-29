@@ -6,6 +6,7 @@
  */
 
 get_header();
+
 $projects = sgd_get_projects();
 ?>
 
@@ -20,8 +21,13 @@ $projects = sgd_get_projects();
                 <span class="sgd-bc-sep">/</span>
                 <span>Portofolio</span>
             </div>
-            <h1 class="sgd-page-title">Portofolio & Rekam Jejak Proyek</h1>
-            <p class="sgd-page-lead">Kumpulan proyek unggulan PT Sunggiardi Prima Konstruksi di berbagai sektor komersial, hunian prestisius, interior korporat, dan pergudangan modern. Klik setiap proyek untuk melihat detail teknis & galeri foto.</p>
+            <h1 class="sgd-page-title">Portofolio & Rekam Jejak Rekayasa Konstruksi</h1>
+            <p class="sgd-page-lead">Kumpulan proyek unggulan PT Sunggiardi Prima Konstruksi di sektor komersial, gedung perkantoran, hunian prestisius, interior korporat, dan fasilitas industri berbentang lebar.</p>
+            <div class="sgd-mt-3">
+                <button type="button" class="sgd-btn sgd-btn-gold" data-modal="profile">
+                    <i class="fa-solid fa-file-pdf"></i> Download Official Project Portfolio & Credentials (PDF)
+                </button>
+            </div>
         </div>
     </div>
 </section>
@@ -40,11 +46,13 @@ $projects = sgd_get_projects();
 
         <!-- Portfolio Items Grid -->
         <div class="sgd-portfolio-grid" id="sgdPortfolioGrid">
-            <?php foreach ($projects as $item) : ?>
+            <?php foreach ($projects as $item) : 
+                $thumbnail = ! empty( $item['images'][0] ) ? $item['images'][0] : SGD_THEME_URI . '/assets/images/project-1.jpg';
+            ?>
                 <div class="sgd-portfolio-item" data-category="<?php echo esc_attr($item['category']); ?>">
                     <div class="sgd-portfolio-card sgd-portfolio-card-clickable" data-project-id="<?php echo esc_attr($item['id']); ?>" role="button" tabindex="0" aria-label="<?php echo esc_attr($item['title']); ?>">
                         <div class="sgd-portfolio-media">
-                            <img src="<?php echo esc_url($item['images'][0]); ?>" alt="<?php echo esc_attr($item['title']); ?>">
+                            <img src="<?php echo esc_url( $thumbnail ); ?>" alt="<?php echo esc_attr($item['title']); ?>">
                             <span class="sgd-category-badge"><?php echo esc_html($item['category_label']); ?></span>
                         </div>
                         <div class="sgd-portfolio-info">
@@ -68,7 +76,7 @@ $projects = sgd_get_projects();
                 <i class="fa-brands fa-instagram"></i>
                 <div>
                     <h4>Dokumentasi Proyek Harian di Instagram @sgdconstruction</h4>
-                    <p>Saksikan proses pengerjaan lapangan, uji tekan beton, hingga serah terima proyek secara langsung melalui reels & stories resmi kami.</p>
+                    <p>Saksikan proses pengerjaan lapangan, uji tekan beton laboratorium, hingga berita acara serah terima (BAST) proyek melalui reels & stories resmi kami.</p>
                 </div>
             </div>
             <a href="<?php echo esc_url( SGD_INSTAGRAM_URL ); ?>" target="_blank" rel="noopener noreferrer" class="sgd-btn sgd-btn-whatsapp">
@@ -86,7 +94,7 @@ $projects = sgd_get_projects();
             <div class="sgd-cta-content">
                 <span class="sgd-badge-accent">MULAI PROYEK ANDA</span>
                 <h2>Ingin Mewujudkan Bangunan Impian Anda?</h2>
-                <p>Jadwalkan konsultasi awal bersama tim estimator dan arsitek SGD Construction sekarang juga.</p>
+                <p>Jadwalkan konsultasi awal bersama tim estimator dan arsitek PT Sunggiardi Prima Konstruksi sekarang juga.</p>
                 <div class="sgd-cta-buttons">
                     <a href="<?php echo esc_url( sgd_get_wa_link('Halo SGD Construction, saya ingin berkonsultasi mengenai rencana proyek saya.') ); ?>" target="_blank" class="sgd-btn sgd-btn-whatsapp sgd-btn-lg">
                         <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp 08116016868
