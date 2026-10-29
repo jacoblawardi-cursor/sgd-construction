@@ -211,110 +211,189 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // =========================================================================
-    // 7. INTERACTIVE CONSTRUCTION COST ESTIMATOR
+    // 7. INTERACTIVE CONSTRUCTION COST ESTIMATOR (TACTILE & EFFORTLESS)
     // =========================================================================
-    const typeButtons = document.querySelectorAll('#sgdEstTypes .sgd-est-type-btn');
-    const areaSlider  = document.getElementById('sgdEstAreaSlider');
-    const areaInput   = document.getElementById('sgdEstAreaInput');
-    const gradeButtons= document.querySelectorAll('#sgdEstGrades .sgd-est-grade-btn');
+    function initConstructionEstimator() {
+        const areaSlider   = document.getElementById('sgdEstAreaSlider');
+        const areaInput    = document.getElementById('sgdEstAreaInput');
+        const costRangeEl  = document.getElementById('sgdEstCostRange');
+        const ratePerM2El  = document.getElementById('sgdEstRatePerM2');
+        const durationEl   = document.getElementById('sgdEstDuration');
+        const estWaBtn     = document.getElementById('sgdEstWaBtn');
 
-    const costRangeEl = document.getElementById('sgdEstCostRange');
-    const ratePerM2El = document.getElementById('sgdEstRatePerM2');
-    const durationEl  = document.getElementById('sgdEstDuration');
-    const estWaBtn    = document.getElementById('sgdEstWaBtn');
+        if (!costRangeEl || !areaInput) return;
 
-    function formatIDR(amount) {
-        if (amount >= 1000000000) {
-            const milyar = (amount / 1000000000).toFixed(1).replace('.0', '').replace('.', ',');
-            return `Rp ${milyar} Milyar`;
-        }
-        const juta = Math.round(amount / 1000000);
-        return `Rp ${juta} Juta`;
-    }
-
-    function calculateEstimate() {
-        if (!costRangeEl || !typeButtons.length || !areaInput) return;
-
-        const activeTypeBtn = document.querySelector('#sgdEstTypes .sgd-est-type-btn.active') || typeButtons[0];
-        const activeGradeBtn= document.querySelector('#sgdEstGrades .sgd-est-grade-btn.active') || gradeButtons[0];
-
-        const type = activeTypeBtn.getAttribute('data-type') || 'commercial';
-        const typeTitle = activeTypeBtn.querySelector('strong')?.textContent.trim() || 'Proyek';
-        const grade = activeGradeBtn.getAttribute('data-grade') || 'premium';
-        const gradeTitle = activeGradeBtn.querySelector('strong')?.textContent.trim() || 'Standard';
-
-        const area = Math.max(parseInt(areaInput.value, 10) || 100, 20);
-
-        let baseRate = parseInt(activeTypeBtn.getAttribute(`data-rate-${grade === 'standard' ? 'std' : (grade === 'luxury' ? 'lux' : 'prem')}`), 10) || 6000000;
-        const speedFactor = parseInt(activeTypeBtn.getAttribute('data-speed'), 10) || 150;
-
-        // Spread range (+/- 6% for realism)
-        const minRate = Math.round(baseRate * 0.94);
-        const maxRate = Math.round(baseRate * 1.06);
-
-        const minTotal = minRate * area;
-        const maxTotal = maxRate * area;
-
-        // Duration calculation
-        let minMonths = Math.max(Math.round(area / speedFactor * 0.85), 2);
-        let maxMonths = Math.max(Math.round(area / speedFactor * 1.25), minMonths + 2);
-
-        costRangeEl.textContent = `${formatIDR(minTotal)} - ${formatIDR(maxTotal)}`;
-        if (ratePerM2El) {
-            ratePerM2El.textContent = `Rata-rata: Rp ${(baseRate).toLocaleString('id-ID')} / m² (${gradeTitle})`;
-        }
-        if (durationEl) {
-            durationEl.textContent = `${minMonths} - ${maxMonths} Bulan`;
+        function formatIDR(amount) {
+            if (amount >= 1000000000) {
+                const milyar = (amount / 1000000000).toFixed(1).replace('.0', '').replace('.', ',');
+                return `Rp ${milyar} Milyar`;
+            }
+            const juta = Math.round(amount / 1000000);
+            return `Rp ${juta} Juta`;
         }
 
-        // WhatsApp direct inquiry
-        if (estWaBtn) {
-            const waNumber = (typeof sgdData !== 'undefined' && sgdData.waNumber) ? sgdData.waNumber : '628116016868';
-            const msg = `Halo Estimator SGD Construction,\nSaya menggunakan Kalkulator Estimasi Website untuk estimasi proyek:\n\n` +
-                        `• *Tipe Proyek:* ${typeTitle}\n` +
-                        `• *Luas Area:* ${area.toLocaleString('id-ID')} m²\n` +
-                        `• *Spesifikasi:* ${gradeTitle}\n` +
-                        `• *Estimasi Anggaran:* ${formatIDR(minTotal)} - ${formatIDR(maxTotal)}\n` +
-                        `• *Estimasi Waktu:* ${minMonths} - ${maxMonths} Bulan\n\n` +
-                        `Mohon info ketersediaan jadwal survey lapangan dan penyusunan RAB definitif. Terima kasih.`;
-            estWaBtn.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
-        }
-    }
+        function calculateEstimate() {
+            const activeTypeBtn = document.querySelector('#sgdEstTypes .sgd-est-type-btn.active') || document.querySelector('.sgd-est-type-btn');
+            const activeGradeBtn= document.querySelector('#sgdEstGrades .sgd-est-grade-btn.active') || document.querySelector('.sgd-est-grade-btn');
 
-    if (typeButtons.length) {
-        typeButtons.forEach(btn => {
-            btn.addEventListener('click', function () {
-                typeButtons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
+            if (!activeTypeBtn || !activeGradeBtn) return;
+
+            const type = activeTypeBtn.getAttribute('data-type') || 'commercial';
+            const typeTitle = activeTypeBtn.querySelector('strong')?.textContent.trim() || 'Proyek';
+            const grade = activeGradeBtn.getAttribute('data-grade') || 'premium';
+            const gradeTitle = activeGradeBtn.querySelector('strong')?.textContent.trim() || 'Standard';
+
+            const area = Math.max(parseInt(areaInput.value, 10) || 100, 25);
+
+            let rateAttr = 'data-rate-prem';
+            if (grade === 'standard') rateAttr = 'data-rate-std';
+            if (grade === 'luxury') rateAttr = 'data-rate-lux';
+
+            let baseRate = parseInt(activeTypeBtn.getAttribute(rateAttr), 10) || 6000000;
+            const speedFactor = parseInt(activeTypeBtn.getAttribute('data-speed'), 10) || 140;
+
+            // Spread range (+/- 6% for realistic estimation)
+            const minRate = Math.round(baseRate * 0.94);
+            const maxRate = Math.round(baseRate * 1.06);
+
+            const minTotal = minRate * area;
+            const maxTotal = maxRate * area;
+
+            // Duration calculation
+            let minMonths = Math.max(Math.round(area / speedFactor * 0.85), 2);
+            let maxMonths = Math.max(Math.round(area / speedFactor * 1.25), minMonths + 2);
+
+            costRangeEl.textContent = `${formatIDR(minTotal)} - ${formatIDR(maxTotal)}`;
+            if (ratePerM2El) {
+                ratePerM2El.textContent = `Rata-rata: Rp ${(baseRate).toLocaleString('id-ID')} / m² (${gradeTitle})`;
+            }
+            if (durationEl) {
+                durationEl.textContent = `${minMonths} - ${maxMonths} Bulan`;
+            }
+
+            // Sync preset pills active state
+            const currentVal = parseInt(areaInput.value, 10);
+            document.querySelectorAll('#sgdAreaPresets .sgd-preset-pill').forEach(pill => {
+                if (parseInt(pill.getAttribute('data-area'), 10) === currentVal) {
+                    pill.classList.add('active');
+                } else {
+                    pill.classList.remove('active');
+                }
+            });
+
+            // WhatsApp direct inquiry
+            if (estWaBtn) {
+                const waNumber = (typeof sgdData !== 'undefined' && sgdData.waNumber) ? sgdData.waNumber : '628116016868';
+                const msg = `Halo Estimator SGD Construction,\nSaya menggunakan Kalkulator Estimasi Website untuk estimasi proyek:\n\n` +
+                            `• *Tipe Proyek:* ${typeTitle}\n` +
+                            `• *Luas Area:* ${area.toLocaleString('id-ID')} m²\n` +
+                            `• *Spesifikasi:* ${gradeTitle}\n` +
+                            `• *Estimasi Anggaran:* ${formatIDR(minTotal)} - ${formatIDR(maxTotal)}\n` +
+                            `• *Estimasi Waktu:* ${minMonths} - ${maxMonths} Bulan\n\n` +
+                            `Mohon info ketersediaan jadwal survey lapangan dan penyusunan RAB definitif. Terima kasih.`;
+                estWaBtn.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
+            }
+        }
+
+        // Stepper Plus / Minus
+        const stepMinus = document.getElementById('sgdStepMinus');
+        const stepPlus  = document.getElementById('sgdStepPlus');
+
+        if (stepMinus) {
+            stepMinus.addEventListener('click', function (e) {
+                e.preventDefault();
+                let current = parseInt(areaInput.value, 10) || 100;
+                let next = Math.max(current - 50, 50);
+                areaInput.value = next;
+                if (areaSlider) areaSlider.value = Math.min(next, 5000);
                 calculateEstimate();
             });
-        });
-    }
+        }
 
-    if (gradeButtons.length) {
-        gradeButtons.forEach(btn => {
-            btn.addEventListener('click', function () {
-                gradeButtons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
+        if (stepPlus) {
+            stepPlus.addEventListener('click', function (e) {
+                e.preventDefault();
+                let current = parseInt(areaInput.value, 10) || 100;
+                let next = Math.min(current + 50, 25000);
+                areaInput.value = next;
+                if (areaSlider) areaSlider.value = Math.min(next, 5000);
                 calculateEstimate();
             });
-        });
-    }
+        }
 
-    if (areaSlider && areaInput) {
-        areaSlider.addEventListener('input', function () {
-            areaInput.value = this.value;
-            calculateEstimate();
+        // Global Event Delegation for 100% Reliable Clicks & Taps
+        document.addEventListener('click', function (e) {
+            // Type Button Click
+            const typeBtn = e.target.closest('.sgd-est-type-btn');
+            if (typeBtn) {
+                e.preventDefault();
+                document.querySelectorAll('.sgd-est-type-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                });
+                typeBtn.classList.add('active');
+                typeBtn.setAttribute('aria-pressed', 'true');
+                calculateEstimate();
+                return;
+            }
+
+            // Grade Button Click
+            const gradeBtn = e.target.closest('.sgd-est-grade-btn');
+            if (gradeBtn) {
+                e.preventDefault();
+                document.querySelectorAll('.sgd-est-grade-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                });
+                gradeBtn.classList.add('active');
+                gradeBtn.setAttribute('aria-pressed', 'true');
+                calculateEstimate();
+                return;
+            }
+
+            // Quick Preset Pill Click
+            const presetPill = e.target.closest('.sgd-preset-pill');
+            if (presetPill) {
+                e.preventDefault();
+                const targetArea = parseInt(presetPill.getAttribute('data-area'), 10);
+                if (!isNaN(targetArea)) {
+                    areaInput.value = targetArea;
+                    if (areaSlider) areaSlider.value = Math.min(targetArea, 5000);
+                    calculateEstimate();
+                }
+                return;
+            }
         });
 
-        areaInput.addEventListener('input', function () {
-            areaSlider.value = this.value;
-            calculateEstimate();
-        });
+        // Sliders & Direct Input
+        if (areaSlider && areaInput) {
+            areaSlider.addEventListener('input', function () {
+                areaInput.value = this.value;
+                calculateEstimate();
+            });
 
-        // Run initial calculation
+            areaSlider.addEventListener('change', function () {
+                areaInput.value = this.value;
+                calculateEstimate();
+            });
+
+            areaInput.addEventListener('input', function () {
+                if (areaSlider) areaSlider.value = Math.min(parseInt(this.value, 10) || 50, 5000);
+                calculateEstimate();
+            });
+
+            areaInput.addEventListener('change', function () {
+                if (areaSlider) areaSlider.value = Math.min(parseInt(this.value, 10) || 50, 5000);
+                calculateEstimate();
+            });
+        }
+
+        // Run calculation immediately
         calculateEstimate();
     }
+
+    // Initialize Estimator
+    initConstructionEstimator();
 
     // =========================================================================
     // 8. DOWNLOAD COMPANY PROFILE MODAL & LEAD CAPTURE

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
-define( 'SGD_VERSION', '1.0.3' );
+define( 'SGD_VERSION', '1.2.5' );
 define( 'SGD_THEME_DIR', get_template_directory() );
 define( 'SGD_THEME_URI', get_template_directory_uri() );
 
@@ -76,12 +76,15 @@ function sgd_construction_scripts() {
         '6.5.1'
     );
 
+    $css_ver = file_exists( SGD_THEME_DIR . '/assets/css/main.css' ) ? filemtime( SGD_THEME_DIR . '/assets/css/main.css' ) : SGD_VERSION;
+    $js_ver  = file_exists( SGD_THEME_DIR . '/assets/js/main.js' ) ? filemtime( SGD_THEME_DIR . '/assets/js/main.js' ) : SGD_VERSION;
+
     // Main Theme CSS
     wp_enqueue_style(
         'sgd-main-style',
         SGD_THEME_URI . '/assets/css/main.css',
         array(),
-        SGD_VERSION
+        $css_ver
     );
 
     // Main Theme JS
@@ -89,7 +92,7 @@ function sgd_construction_scripts() {
         'sgd-main-script',
         SGD_THEME_URI . '/assets/js/main.js',
         array( 'jquery' ),
-        SGD_VERSION,
+        $js_ver,
         true
     );
 

@@ -267,47 +267,84 @@ get_header();
                             <span>Pilih Kategori / Tipe Proyek:</span>
                         </label>
                         <div class="sgd-est-types-grid" id="sgdEstTypes">
-                            <button type="button" class="sgd-est-type-btn active" data-type="commercial" data-rate-std="5500000" data-rate-prem="7200000" data-rate-lux="9500000" data-speed="140">
-                                <i class="fa-solid fa-building"></i>
+                            <button type="button" class="sgd-est-type-btn active" data-type="commercial" data-rate-std="5500000" data-rate-prem="7200000" data-rate-lux="9500000" data-speed="140" aria-pressed="true">
+                                <div class="sgd-est-btn-top">
+                                    <i class="fa-solid fa-building"></i>
+                                    <span class="sgd-est-check"><i class="fa-solid fa-check"></i></span>
+                                </div>
                                 <strong>Gedung / Kantor</strong>
                                 <small>Komersial, Ruko & Plaza</small>
                             </button>
-                            <button type="button" class="sgd-est-type-btn" data-type="residential" data-rate-std="6500000" data-rate-prem="8800000" data-rate-lux="12000000" data-speed="100">
-                                <i class="fa-solid fa-house-chimney"></i>
+                            <button type="button" class="sgd-est-type-btn" data-type="residential" data-rate-std="6500000" data-rate-prem="8800000" data-rate-lux="12000000" data-speed="100" aria-pressed="false">
+                                <div class="sgd-est-btn-top">
+                                    <i class="fa-solid fa-house-chimney"></i>
+                                    <span class="sgd-est-check"><i class="fa-solid fa-check"></i></span>
+                                </div>
                                 <strong>Residensial Mewah</strong>
                                 <small>Rumah Tinggal & Villa</small>
                             </button>
-                            <button type="button" class="sgd-est-type-btn" data-type="interior" data-rate-std="3200000" data-rate-prem="4800000" data-rate-lux="7000000" data-speed="300">
-                                <i class="fa-solid fa-couch"></i>
+                            <button type="button" class="sgd-est-type-btn" data-type="interior" data-rate-std="3200000" data-rate-prem="4800000" data-rate-lux="7000000" data-speed="300" aria-pressed="false">
+                                <div class="sgd-est-btn-top">
+                                    <i class="fa-solid fa-couch"></i>
+                                    <span class="sgd-est-check"><i class="fa-solid fa-check"></i></span>
+                                </div>
                                 <strong>Interior Fit-Out</strong>
                                 <small>Office, Retail & Custom</small>
                             </button>
-                            <button type="button" class="sgd-est-type-btn" data-type="industrial" data-rate-std="3800000" data-rate-prem="5200000" data-rate-lux="6800000" data-speed="600">
-                                <i class="fa-solid fa-warehouse"></i>
+                            <button type="button" class="sgd-est-type-btn" data-type="industrial" data-rate-std="3800000" data-rate-prem="5200000" data-rate-lux="6800000" data-speed="600" aria-pressed="false">
+                                <div class="sgd-est-btn-top">
+                                    <i class="fa-solid fa-warehouse"></i>
+                                    <span class="sgd-est-check"><i class="fa-solid fa-check"></i></span>
+                                </div>
                                 <strong>Gudang / Pabrik</strong>
                                 <small>Konstruksi Baja Bentang</small>
                             </button>
-                            <button type="button" class="sgd-est-type-btn" data-type="care" data-rate-std="550000" data-rate-prem="950000" data-rate-lux="1400000" data-speed="800">
-                                <i class="fa-solid fa-wrench"></i>
+                            <button type="button" class="sgd-est-type-btn" data-type="care" data-rate-std="550000" data-rate-prem="950000" data-rate-lux="1400000" data-speed="800" aria-pressed="false">
+                                <div class="sgd-est-btn-top">
+                                    <i class="fa-solid fa-wrench"></i>
+                                    <span class="sgd-est-check"><i class="fa-solid fa-check"></i></span>
+                                </div>
                                 <strong>SGD Care AMC</strong>
                                 <small>Maintenance Kontrak</small>
                             </button>
                         </div>
                     </div>
 
-                    <!-- Step 2: Area Slider & Input -->
+                    <!-- Step 2: Area Slider & Quick Presets -->
                     <div class="sgd-est-step">
                         <div class="sgd-d-flex sgd-justify-between sgd-items-center sgd-mb-2">
                             <label class="sgd-est-label sgd-mb-0" for="sgdEstAreaInput">
                                 <span class="sgd-est-step-num">2</span>
                                 <span>Estimasi Luas Area (GFA):</span>
                             </label>
-                            <div class="sgd-est-input-wrap">
-                                <input type="number" id="sgdEstAreaInput" class="sgd-est-num-input" value="500" min="50" max="25000" step="25">
-                                <span class="sgd-est-unit">m²</span>
+                            <div class="sgd-est-input-controls">
+                                <button type="button" class="sgd-stepper-btn" id="sgdStepMinus" aria-label="Kurangi 50 m²">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <div class="sgd-est-input-wrap">
+                                    <input type="number" id="sgdEstAreaInput" class="sgd-est-num-input" value="500" min="50" max="25000" step="25">
+                                    <span class="sgd-est-unit">m²</span>
+                                </div>
+                                <button type="button" class="sgd-stepper-btn" id="sgdStepPlus" aria-label="Tambah 50 m²">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
                             </div>
                         </div>
-                        <input type="range" id="sgdEstAreaSlider" class="sgd-est-range-slider" value="500" min="50" max="5000" step="25">
+
+                        <!-- Quick Area Presets for 1-Click Selection -->
+                        <div class="sgd-est-presets-bar">
+                            <span class="sgd-presets-title"><i class="fa-solid fa-hand-pointer"></i> Pilihan Cepat:</span>
+                            <div class="sgd-preset-pills-row" id="sgdAreaPresets">
+                                <button type="button" class="sgd-preset-pill" data-area="150">150 m²</button>
+                                <button type="button" class="sgd-preset-pill" data-area="350">350 m²</button>
+                                <button type="button" class="sgd-preset-pill active" data-area="500">500 m²</button>
+                                <button type="button" class="sgd-preset-pill" data-area="1000">1.000 m²</button>
+                                <button type="button" class="sgd-preset-pill" data-area="2500">2.500 m²</button>
+                                <button type="button" class="sgd-preset-pill" data-area="5000">5.000 m²</button>
+                            </div>
+                        </div>
+
+                        <input type="range" id="sgdEstAreaSlider" class="sgd-est-range-slider" value="500" min="50" max="5000" step="25" aria-label="Geser untuk mengatur luas m²">
                         <div class="sgd-range-limits">
                             <span>50 m²</span>
                             <span>1.000 m²</span>
@@ -323,18 +360,27 @@ get_header();
                             <span>Tingkat Spesifikasi Material & Finishing:</span>
                         </label>
                         <div class="sgd-est-grades-grid" id="sgdEstGrades">
-                            <button type="button" class="sgd-est-grade-btn" data-grade="standard">
-                                <span class="sgd-grade-badge">Standard</span>
+                            <button type="button" class="sgd-est-grade-btn" data-grade="standard" aria-pressed="false">
+                                <div class="sgd-est-btn-top">
+                                    <span class="sgd-grade-badge">Standard</span>
+                                    <span class="sgd-est-check"><i class="fa-solid fa-check"></i></span>
+                                </div>
                                 <strong>Standar Korporat SNI</strong>
                                 <small>Material kokoh teruji SNI, sanitair standar, cat tahan cuaca.</small>
                             </button>
-                            <button type="button" class="sgd-est-grade-btn active" data-grade="premium">
-                                <span class="sgd-grade-badge sgd-badge-popular">Populer</span>
+                            <button type="button" class="sgd-est-grade-btn active" data-grade="premium" aria-pressed="true">
+                                <div class="sgd-est-btn-top">
+                                    <span class="sgd-grade-badge sgd-badge-popular">Populer</span>
+                                    <span class="sgd-est-check"><i class="fa-solid fa-check"></i></span>
+                                </div>
                                 <strong>Premium Commercial</strong>
                                 <small>Granit tile 80x80/100x100, kusen YKK, Toto sanitair, cat Jotun/Dulux.</small>
                             </button>
-                            <button type="button" class="sgd-est-grade-btn" data-grade="luxury">
-                                <span class="sgd-grade-badge sgd-badge-luxury">Luxury</span>
+                            <button type="button" class="sgd-est-grade-btn" data-grade="luxury" aria-pressed="false">
+                                <div class="sgd-est-btn-top">
+                                    <span class="sgd-grade-badge sgd-badge-luxury">Luxury</span>
+                                    <span class="sgd-est-check"><i class="fa-solid fa-check"></i></span>
+                                </div>
                                 <strong>Luxury / High-End</strong>
                                 <small>Slab marmer impor Italia, smart building automation, curtain wall Low-E.</small>
                             </button>
