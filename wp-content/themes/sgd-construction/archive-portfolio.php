@@ -28,7 +28,7 @@ $projects = sgd_get_projects();
                 <span>Portofolio</span>
             </div>
             <h1 class="sgd-page-title">Portofolio &amp; Rekam Jejak Proyek</h1>
-            <p class="sgd-page-lead">Kumpulan proyek unggulan PT Sunggiardi Prima Konstruksi di berbagai sektor komersial, hunian prestisius, interior korporat, dan pergudangan modern. Klik setiap proyek untuk melihat detail teknis &amp; galeri foto.</p>
+            <p class="sgd-page-lead">Kumpulan proyek unggulan SGD Construction di berbagai sektor komersial, hunian prestisius, interior korporat, dan pergudangan modern. Klik setiap proyek untuk melihat detail teknis &amp; galeri foto.</p>
         </div>
     </div>
 </section>

@@ -17,8 +17,7 @@
     {
       "@context": "https://schema.org",
       "@type": "GeneralContractor",
-      "name": "PT Sunggiardi Prima Konstruksi",
-      "alternateName": "SGD Construction",
+      "name": "SGD Construction",
       "url": "<?php echo esc_url( home_url( '/' ) ); ?>",
       "logo": "<?php echo esc_url( SGD_THEME_URI . '/assets/images/Logo Landscape.png' ); ?>",
       "image": "<?php echo esc_url( SGD_THEME_URI . '/assets/images/hero-bg.jpg' ); ?>",
@@ -49,6 +48,19 @@
       "priceRange": "$$$$"
     }
     </script>
+    
+    <!-- Instant Zero-FOUC Theme & Language Initialization -->
+    <script>
+    (function() {
+        try {
+            var theme = localStorage.getItem('sgd_theme') || 'wow';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.add('theme-' + theme);
+            var lang = localStorage.getItem('sgd_lang') || 'id';
+            document.documentElement.lang = lang;
+        } catch(e) {}
+    })();
+    </script>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -63,7 +75,7 @@
                     <span class="sgd-topbar-item">
                         <i class="fa-solid fa-clock"></i> <span data-i18n-id="Sen - Jum: 08:30 - 17:30 WIB" data-i18n-en="Mon - Fri: 08:30 - 17:30 WIB">Sen - Jum: 08:30 - 17:30 WIB</span>
                     </span>
-                    <a href="mailto:<?php echo esc_attr( SGD_EMAIL ); ?>" class="sgd-topbar-item sgd-link-hover">
+                    <a href="mailto:<?php echo esc_attr( SGD_EMAIL ); ?>" class="sgd-topbar-item sgd-link-hover sgd-email-trigger" data-email="<?php echo esc_attr( SGD_EMAIL ); ?>" role="button" aria-haspopup="dialog" aria-expanded="false" title="Hubungi via Email (Gmail, Salin Alamat, dll)">
                         <i class="fa-solid fa-envelope"></i> <?php echo esc_html( SGD_EMAIL ); ?>
                     </a>
                 </div>
@@ -81,6 +93,19 @@
                         <button type="button" class="sgd-lang-btn active" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
                         <span class="sgd-lang-sep">/</span>
                         <button type="button" class="sgd-lang-btn" data-lang="en" aria-label="English">EN</button>
+                    </div>
+                    <span class="sgd-divider">|</span>
+                    <!-- Theme Switcher (WoW / Genshin Impact) -->
+                    <div class="sgd-theme-switcher" id="sgdThemeSwitcher" title="Ganti Tema Tampilan (World of Warcraft / Genshin Impact)">
+                        <button type="button" class="sgd-theme-btn active" data-theme="wow" aria-label="Tema World of Warcraft" title="Tema World of Warcraft">
+                            <span class="sgd-theme-icon">⚔️</span>
+                            <span class="sgd-theme-name">WoW</span>
+                        </button>
+                        <span class="sgd-theme-sep">/</span>
+                        <button type="button" class="sgd-theme-btn" data-theme="genshin" aria-label="Tema Genshin Impact" title="Tema Genshin Impact">
+                            <span class="sgd-theme-icon">✦</span>
+                            <span class="sgd-theme-name">Genshin</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -162,6 +187,20 @@
                 </div>
             </div>
 
+            <!-- Mobile Theme Switcher -->
+            <div class="sgd-drawer-theme-bar">
+                <span class="sgd-drawer-lang-label"><i class="fa-solid fa-wand-magic-sparkles"></i> Tema:</span>
+                <div class="sgd-theme-switcher sgd-theme-switcher-drawer" id="sgdMobileThemeSwitcher">
+                    <button type="button" class="sgd-theme-btn active" data-theme="wow">
+                        <span class="sgd-theme-icon">⚔️</span> WoW
+                    </button>
+                    <span class="sgd-theme-sep">|</span>
+                    <button type="button" class="sgd-theme-btn" data-theme="genshin">
+                        <span class="sgd-theme-icon">✦</span> Genshin
+                    </button>
+                </div>
+            </div>
+
             <div class="sgd-drawer-nav">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="sgd-drawer-link <?php echo is_front_page() ? 'active' : ''; ?>">
                     <i class="fa-solid fa-house"></i> <span data-i18n-id="Beranda" data-i18n-en="Home">Beranda</span>
@@ -192,7 +231,7 @@
                     <a href="<?php echo esc_url( sgd_get_wa_link() ); ?>" target="_blank" class="sgd-drawer-btn-wa">
                         <i class="fa-brands fa-whatsapp"></i> <?php echo esc_html( SGD_PHONE ); ?>
                     </a>
-                    <a href="mailto:<?php echo esc_attr( SGD_EMAIL ); ?>" class="sgd-drawer-info-link">
+                    <a href="mailto:<?php echo esc_attr( SGD_EMAIL ); ?>" class="sgd-drawer-info-link sgd-email-trigger" data-email="<?php echo esc_attr( SGD_EMAIL ); ?>" role="button" aria-haspopup="dialog" aria-expanded="false" title="Hubungi via Email">
                         <i class="fa-solid fa-envelope"></i> <?php echo esc_html( SGD_EMAIL ); ?>
                     </a>
                     <a href="<?php echo esc_url( SGD_INSTAGRAM_URL ); ?>" target="_blank" class="sgd-drawer-info-link">

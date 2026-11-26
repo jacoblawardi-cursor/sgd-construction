@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Premium Paint Brands Official Style (Jotun, Mowilex, Propan, Dulux) -->
+  <defs>
+    <linearGradient id="paintJotun" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003865"/>
+      <stop offset="100%" stop-color="#D8232A"/>
+    </linearGradient>
+    <linearGradient id="paintDulux" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0085CA"/>
+      <stop offset="50%" stop-color="#FFDD00"/>
+      <stop offset="100%" stop-color="#E30613"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="46" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <!-- Paint Drops / Palette Fan Motif -->
+  <g transform="translate(50, 36)">
+    <!-- 4 Swatches for Jotun (Navy/Red), Mowilex (Teal/Green), Propan (Orange/Blue), Dulux (Color Flourish) -->
+    <!-- Drop 1: Jotun Navy -->
+    <path d="M 0 -22 C 6 -14, 12 -4, 12 4 A 12 12 0 0 1 -12 4 C -12 -4, -6 -14, 0 -22 Z" fill="#003865" transform="rotate(-40)"/>
+    <!-- Drop 2: Dulux / Propan Orange -->
+    <path d="M 0 -22 C 6 -14, 12 -4, 12 4 A 12 12 0 0 1 -12 4 C -12 -4, -6 -14, 0 -22 Z" fill="#F97316" transform="rotate(40)"/>
+    <!-- Drop 3: Mowilex Green / Cyan -->
+    <path d="M 0 -22 C 6 -14, 12 -4, 12 4 A 12 12 0 0 1 -12 4 C -12 -4, -6 -14, 0 -22 Z" fill="#059669" transform="rotate(130)"/>
+    <!-- Drop 4: Red Accent -->
+    <path d="M 0 -22 C 6 -14, 12 -4, 12 4 A 12 12 0 0 1 -12 4 C -12 -4, -6 -14, 0 -22 Z" fill="#DC2626" transform="rotate(-130)"/>
+    <!-- Center Pure White Pearl -->
+    <circle cx="0" cy="0" r="7" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3.5" fill="#C5A059"/>
+  </g>
+  <!-- Paint Typography -->
+  <text x="50" y="73" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="8.5" font-weight="900" fill="#0F172A" text-anchor="middle" letter-spacing="1">JOTUN • DULUX</text>
+  <text x="50" y="85" font-family="'Montserrat', sans-serif" font-size="6.5" font-weight="800" fill="#64748B" text-anchor="middle" letter-spacing="1.5">MOWILEX • PROPAN</text>
+</svg>

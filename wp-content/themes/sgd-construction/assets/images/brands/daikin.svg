@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Daikin Triangle Chevron Symbol -->
+  <g transform="translate(18, 20)">
+    <polygon points="6,6 60,28 6,50" fill="#0097E2"/>
+    <polygon points="12,14 44,28 12,42" fill="#0077BA"/>
+  </g>
+  <text x="50" y="84" font-family="'Montserrat', 'Arial Black', -apple-system, sans-serif" font-size="12" font-weight="900" fill="#002D62" text-anchor="middle" letter-spacing="1">DAIKIN</text>
+</svg>

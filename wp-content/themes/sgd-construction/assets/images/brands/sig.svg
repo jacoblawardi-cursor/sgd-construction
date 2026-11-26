@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Semen Indonesia Group (SIG) Emblem -->
+  <g transform="translate(50, 42)">
+    <path d="M 0 -32 C 14 -32 24 -20 19 -6 C 15 6 3 10 0 0 C -3 -9 -7 -20 0 -32 Z" fill="#E31B23"/>
+    <path d="M 0 -32 C 14 -32 24 -20 19 -6 C 15 6 3 10 0 0 C -3 -9 -7 -20 0 -32 Z" fill="#D3141C" transform="rotate(120)"/>
+    <path d="M 0 -32 C 14 -32 24 -20 19 -6 C 15 6 3 10 0 0 C -3 -9 -7 -20 0 -32 Z" fill="#B30E14" transform="rotate(240)"/>
+    <circle cx="0" cy="0" r="5" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="3" fill="#E31B23"/>
+  </g>
+  <text x="50" y="88" font-family="'Montserrat', 'Arial Black', -apple-system, sans-serif" font-size="18" font-weight="900" fill="#E31B23" text-anchor="middle" letter-spacing="2">SIG</text>
+</svg>

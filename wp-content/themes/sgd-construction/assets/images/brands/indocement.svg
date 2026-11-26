@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Indocement Semen Tiga Roda Official Style Logo -->
+  <defs>
+    <linearGradient id="indoRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E11D48"/>
+      <stop offset="100%" stop-color="#BE123C"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="46" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <!-- Tiga Roda (Three Interlocking Cogwheels) Emblem -->
+  <g transform="translate(50, 36)">
+    <!-- Outer Brand Ring -->
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+    <!-- Top Cogwheel -->
+    <g transform="translate(0, -10)">
+      <circle cx="0" cy="0" r="8" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="3.5" fill="#DC2626"/>
+      <!-- Cog Teeth -->
+      <path d="M 0 -10.5 L 0 -8 M 0 8 L 0 10.5 M -10.5 0 L -8 0 M 8 0 L 10.5 0 M -7.5 -7.5 L -5.5 -5.5 M 5.5 5.5 L 7.5 7.5 M -7.5 7.5 L -5.5 5.5 M 5.5 -5.5 L 7.5 -7.5" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <!-- Bottom Left Cogwheel -->
+    <g transform="translate(-10, 8)">
+      <circle cx="0" cy="0" r="8" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="3.5" fill="#DC2626"/>
+      <!-- Cog Teeth -->
+      <path d="M 0 -10.5 L 0 -8 M 0 8 L 0 10.5 M -10.5 0 L -8 0 M 8 0 L 10.5 0 M -7.5 -7.5 L -5.5 -5.5 M 5.5 5.5 L 7.5 7.5 M -7.5 7.5 L -5.5 5.5 M 5.5 -5.5 L 7.5 -7.5" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <!-- Bottom Right Cogwheel -->
+    <g transform="translate(10, 8)">
+      <circle cx="0" cy="0" r="8" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="3.5" fill="#DC2626"/>
+      <!-- Cog Teeth -->
+      <path d="M 0 -10.5 L 0 -8 M 0 8 L 0 10.5 M -10.5 0 L -8 0 M 8 0 L 10.5 0 M -7.5 -7.5 L -5.5 -5.5 M 5.5 5.5 L 7.5 7.5 M -7.5 7.5 L -5.5 5.5 M 5.5 -5.5 L 7.5 -7.5" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+  </g>
+  <!-- Text Brand -->
+  <text x="50" y="74" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="8" font-weight="900" fill="#DC2626" text-anchor="middle" letter-spacing="1">TIGA RODA</text>
+  <text x="50" y="85" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="6.5" font-weight="800" fill="#1E3A8A" text-anchor="middle" letter-spacing="1.5">INDOCEMENT</text>
+</svg>

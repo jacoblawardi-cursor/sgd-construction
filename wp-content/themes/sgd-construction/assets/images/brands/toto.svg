@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- TOTO Official Wordmark -->
+  <g transform="translate(6, 32)">
+    <!-- First T -->
+    <path d="M 2 4 H 20 V 10 H 13 V 30 H 9 V 10 H 2 Z" fill="#002D62"/>
+    <!-- First O -->
+    <path d="M 23 17 C 23 9 28 4 35.5 4 C 43 4 48 9 48 17 C 48 25 43 30 35.5 30 C 28 30 23 25 23 17 Z M 28.5 17 C 28.5 22 31.5 25 35.5 25 C 39.5 25 42.5 22 42.5 17 C 42.5 12 39.5 9 35.5 9 C 31.5 9 28.5 12 28.5 17 Z" fill="#002D62"/>
+    <!-- Second T -->
+    <path d="M 50 4 H 68 V 10 H 61 V 30 H 57 V 10 H 50 Z" fill="#002D62"/>
+    <!-- Second O -->
+    <path d="M 71 17 C 71 9 76 4 83.5 4 C 91 4 96 9 96 17 C 96 25 91 30 83.5 30 C 76 30 71 25 71 17 Z M 76.5 17 C 76.5 22 79.5 25 83.5 25 C 87.5 25 90.5 22 90.5 17 C 90.5 12 87.5 9 83.5 9 C 79.5 9 76.5 12 76.5 17 Z" fill="#002D62"/>
+  </g>
+  <rect x="25" y="74" width="50" height="3" rx="1.5" fill="#002D62" opacity="0.35"/>
+</svg>

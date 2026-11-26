@@ -13,19 +13,19 @@
         <div class="sgd-container">
             <div class="sgd-footer-cta-inner">
                 <div class="sgd-footer-cta-text">
-                    <span class="sgd-badge-accent">KONSULTASI GRATIS</span>
-                    <h3>Rencanakan Proyek Konstruksi Anda Bersama Tim Ahli SGD</h3>
-                    <p>Dari konsep desain hingga serah terima bangunan, kami siap mewujudkan visi bangunan terbaik Anda dengan standar mutu dan keselamatan tertinggi.</p>
+                    <span class="sgd-badge-accent" data-i18n-id="KONSULTASI GRATIS" data-i18n-en="FREE CONSULTATION">KONSULTASI GRATIS</span>
+                    <h3 data-i18n-id="Rencanakan Proyek Konstruksi Anda Bersama Tim Ahli SGD" data-i18n-en="Plan Your Construction Project with SGD Engineering Experts">Rencanakan Proyek Konstruksi Anda Bersama Tim Ahli SGD</h3>
+                    <p data-i18n-id="Dari konsep desain hingga serah terima bangunan, kami siap mewujudkan visi bangunan terbaik Anda dengan standar mutu dan keselamatan tertinggi." data-i18n-en="From design concept to building handover, we are ready to realize your finest building vision with the highest quality and safety standards.">Dari konsep desain hingga serah terima bangunan, kami siap mewujudkan visi bangunan terbaik Anda dengan standar mutu dan keselamatan tertinggi.</p>
                 </div>
                 <div class="sgd-footer-cta-actions">
                     <button type="button" class="sgd-btn sgd-btn-gold sgd-btn-lg" data-modal="profile">
-                        <i class="fa-solid fa-file-pdf"></i> Download Company Profile
+                        <i class="fa-solid fa-file-pdf"></i> <span data-i18n-id="Download Company Profile" data-i18n-en="Download Company Deck">Download Company Profile</span>
                     </button>
                     <a href="<?php echo esc_url( sgd_get_wa_link('Halo SGD Construction, saya ingin menjadwalkan konsultasi proyek.') ); ?>" target="_blank" rel="noopener noreferrer" class="sgd-btn sgd-btn-whatsapp sgd-btn-lg">
-                        <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp 08116016868
+                        <i class="fa-brands fa-whatsapp"></i> <span data-i18n-id="Chat WhatsApp 08116016868" data-i18n-en="Chat WhatsApp 08116016868">Chat WhatsApp 08116016868</span>
                     </a>
                     <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="sgd-btn sgd-btn-outline sgd-btn-lg">
-                        Kirim Form Inquiry
+                        <span data-i18n-id="Kirim Form Inquiry" data-i18n-en="Submit Inquiry Form">Kirim Form Inquiry</span>
                     </a>
                 </div>
             </div>
@@ -41,8 +41,8 @@
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="sgd-footer-logo">
                         <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/Logo Landscape.png' ); ?>" alt="SGD Construction" class="sgd-footer-logo-img">
                     </a>
-                    <p class="sgd-footer-desc">
-                        <strong>PT Sunggiardi Prima Konstruksi (SGD Construction)</strong> adalah penyedia jasa konstruksi, arsitektur, kontraktor umum, dan interior berstandar profesional di Indonesia. Kami mengedepankan kualitas struktural, efisiensi waktu, dan transparansi anggaran.
+                    <p class="sgd-footer-desc" data-i18n-id="Jasa pembangunan dan renovasi rumah serta bangunan komersial, dengan proses yang transparan dan perhatian pada kualitas di setiap tahap." data-i18n-en="Residential and commercial construction and renovation services, with transparent processes and attention to quality at every stage.">
+                        <strong>SGD Construction</strong> — Jasa pembangunan dan renovasi rumah serta bangunan komersial, dengan proses yang transparan dan perhatian pada kualitas di setiap tahap.
                     </p>
                     <div class="sgd-footer-socials">
                         <a href="<?php echo esc_url( SGD_INSTAGRAM_URL ); ?>" target="_blank" rel="noopener noreferrer" class="sgd-social-icon" aria-label="Instagram SGD Construction">
@@ -51,7 +51,7 @@
                         <a href="<?php echo esc_url( sgd_get_wa_link() ); ?>" target="_blank" rel="noopener noreferrer" class="sgd-social-icon" aria-label="WhatsApp SGD Construction">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
-                        <a href="mailto:<?php echo esc_attr( SGD_EMAIL ); ?>" class="sgd-social-icon" aria-label="Email SGD Construction">
+                        <a href="mailto:<?php echo esc_attr( SGD_EMAIL ); ?>" class="sgd-social-icon sgd-email-trigger" data-email="<?php echo esc_attr( SGD_EMAIL ); ?>" role="button" aria-label="Email SGD Construction">
                             <i class="fa-solid fa-envelope"></i>
                         </a>
                     </div>
@@ -59,36 +59,36 @@
 
                 <!-- Col 2: Navigation Links -->
                 <div class="sgd-footer-col">
-                    <h4 class="sgd-footer-heading">Navigasi Utama</h4>
+                    <h4 class="sgd-footer-heading" data-i18n-id="Navigasi Utama" data-i18n-en="Main Navigation">Navigasi Utama</h4>
                     <ul class="sgd-footer-links">
-                        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa-solid fa-angle-right"></i> Beranda / Home</a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><i class="fa-solid fa-angle-right"></i> Tentang Kami (About)</a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"><i class="fa-solid fa-angle-right"></i> Layanan Konstruksi</a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/portfolio/' ) ); ?>"><i class="fa-solid fa-angle-right"></i> Portofolio Proyek</a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><i class="fa-solid fa-angle-right"></i> Hubungi Kami (Contact)</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa-solid fa-angle-right"></i> <span data-i18n-id="Beranda / Home" data-i18n-en="Home">Beranda / Home</span></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><i class="fa-solid fa-angle-right"></i> <span data-i18n-id="Tentang Kami (About)" data-i18n-en="About Us">Tentang Kami (About)</span></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"><i class="fa-solid fa-angle-right"></i> <span data-i18n-id="Layanan Konstruksi" data-i18n-en="Construction Services">Layanan Konstruksi</span></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/portfolio/' ) ); ?>"><i class="fa-solid fa-angle-right"></i> <span data-i18n-id="Portofolio Proyek" data-i18n-en="Project Portfolio">Portofolio Proyek</span></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><i class="fa-solid fa-angle-right"></i> <span data-i18n-id="Hubungi Kami (Contact)" data-i18n-en="Contact Us">Hubungi Kami (Contact)</span></a></li>
                     </ul>
                 </div>
 
                 <!-- Col 3: Services -->
                 <div class="sgd-footer-col">
-                    <h4 class="sgd-footer-heading">Layanan Unggulan</h4>
+                    <h4 class="sgd-footer-heading" data-i18n-id="Layanan Kami" data-i18n-en="Our Services">Layanan Kami</h4>
                     <ul class="sgd-footer-links">
-                        <li><a href="<?php echo esc_url( home_url( '/services/#contracting' ) ); ?>"><i class="fa-solid fa-angle-right"></i> General Contracting & Sipil</a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/services/#architecture' ) ); ?>"><i class="fa-solid fa-angle-right"></i> Desain Arsitektur & Struktur</a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/services/#interior' ) ); ?>"><i class="fa-solid fa-angle-right"></i> Interior Fit-Out & Renovasi</a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/services/#mep' ) ); ?>"><i class="fa-solid fa-angle-right"></i> Mechanical, Electrical & Plumbing</a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/services/#care' ) ); ?>"><i class="fa-solid fa-angle-right"></i> SGD Care: Building Maintenance</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/services/#residential' ) ); ?>"><i class="fa-solid fa-angle-right"></i> <span data-i18n-id="01 — Rumah Tinggal" data-i18n-en="01 — Residential Living">01 — Rumah Tinggal</span></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/services/#commercial' ) ); ?>"><i class="fa-solid fa-angle-right"></i> <span data-i18n-id="02 — Bangunan Komersial" data-i18n-en="02 — Commercial Buildings">02 — Bangunan Komersial</span></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/services/#special' ) ); ?>"><i class="fa-solid fa-angle-right"></i> <span data-i18n-id="03 — Proyek Khusus" data-i18n-en="03 — Special Projects">03 — Proyek Khusus</span></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/services/#care' ) ); ?>"><i class="fa-solid fa-angle-right"></i> <span data-i18n-id="04 — SGD Care" data-i18n-en="04 — SGD Care">04 — SGD Care</span></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/services/#standards' ) ); ?>"><i class="fa-solid fa-angle-right"></i> <span data-i18n-id="SGD Material Standard" data-i18n-en="SGD Material Standard">SGD Material Standard</span></a></li>
                     </ul>
                 </div>
 
                 <!-- Col 4: Contact & Office -->
                 <div class="sgd-footer-col">
-                    <h4 class="sgd-footer-heading">Kontak Resmi</h4>
+                    <h4 class="sgd-footer-heading" data-i18n-id="Kontak Resmi" data-i18n-en="Official Contact">Kontak Resmi</h4>
                     <div class="sgd-footer-contact-list">
                         <div class="sgd-contact-item">
                             <div class="sgd-contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
                             <div>
-                                <span class="sgd-contact-label">WhatsApp (Chat Only):</span>
+                                <span class="sgd-contact-label" data-i18n-id="WhatsApp (Chat Only):" data-i18n-en="WhatsApp (Chat Only):">WhatsApp (Chat Only):</span>
                                 <a href="<?php echo esc_url( sgd_get_wa_link() ); ?>" target="_blank" class="sgd-contact-value">
                                     <?php echo esc_html( SGD_PHONE ); ?>
                                 </a>
@@ -97,8 +97,8 @@
                         <div class="sgd-contact-item">
                             <div class="sgd-contact-icon"><i class="fa-solid fa-envelope"></i></div>
                             <div>
-                                <span class="sgd-contact-label">Email Resmi:</span>
-                                <a href="mailto:<?php echo esc_attr( SGD_EMAIL ); ?>" class="sgd-contact-value">
+                                <span class="sgd-contact-label" data-i18n-id="Email Resmi:" data-i18n-en="Official Email:">Email Resmi:</span>
+                                <a href="mailto:<?php echo esc_attr( SGD_EMAIL ); ?>" class="sgd-contact-value sgd-email-trigger" data-email="<?php echo esc_attr( SGD_EMAIL ); ?>" role="button">
                                     <?php echo esc_html( SGD_EMAIL ); ?>
                                 </a>
                             </div>
@@ -106,7 +106,7 @@
                         <div class="sgd-contact-item">
                             <div class="sgd-contact-icon"><i class="fa-brands fa-instagram"></i></div>
                             <div>
-                                <span class="sgd-contact-label">Official Instagram:</span>
+                                <span class="sgd-contact-label" data-i18n-id="Official Instagram:" data-i18n-en="Official Instagram:">Official Instagram:</span>
                                 <a href="<?php echo esc_url( SGD_INSTAGRAM_URL ); ?>" target="_blank" class="sgd-contact-value">
                                     <?php echo esc_html( SGD_INSTAGRAM_HANDLE ); ?>
                                 </a>
@@ -115,7 +115,7 @@
                         <div class="sgd-contact-item">
                             <div class="sgd-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
                             <div>
-                                <span class="sgd-contact-label">Lokasi Kantor:</span>
+                                <span class="sgd-contact-label" data-i18n-id="Lokasi Kantor:" data-i18n-en="Office Location:">Lokasi Kantor:</span>
                                 <span class="sgd-contact-value sgd-contact-address">
                                     <?php echo esc_html( SGD_ADDRESS ); ?>
                                 </span>
@@ -132,7 +132,7 @@
         <div class="sgd-container">
             <div class="sgd-footer-bottom-inner">
                 <p class="sgd-copyright">
-                    &copy; <?php echo date('Y'); ?> <strong>PT Sunggiardi Prima Konstruksi (SGD Construction)</strong>. All Rights Reserved.
+                    &copy; <?php echo date('Y'); ?> <strong>SGD Construction</strong>. All Rights Reserved.
                 </p>
                 <div class="sgd-footer-bottom-tags">
                     <span class="sgd-tag-pill">SMK3 Certified Standards</span>
@@ -143,6 +143,18 @@
         </div>
     </div>
 </footer>
+
+<!-- Floating Theme Switcher Quick Toggle Widget -->
+<aside class="sgd-floating-theme" id="sgdFloatingTheme">
+    <button type="button" class="sgd-floating-theme-btn" id="sgdFloatingThemeBtn" aria-label="Ganti Tema (WoW / Genshin Impact)" title="Klik untuk ganti tema (World of Warcraft / Genshin Impact)">
+        <span class="sgd-floating-theme-icon" id="sgdFloatingThemeIcon">⚔️</span>
+        <div class="sgd-floating-theme-info">
+            <span class="sgd-floating-theme-tiny">THEME</span>
+            <span class="sgd-floating-theme-name" id="sgdFloatingThemeName">WoW</span>
+        </div>
+        <span class="sgd-floating-theme-pill" id="sgdFloatingThemePill">Switch</span>
+    </button>
+</aside>
 
 <!-- Floating WhatsApp Action Button -->
 <aside class="sgd-floating-wa" id="sgdFloatingWa">
@@ -335,7 +347,7 @@
                 </div>
                 <div>
                     <span class="sgd-category-badge">OFFICIAL CORPORATE DOCUMENT</span>
-                    <h3 class="sgd-modal-title sgd-h3">Unduh Company Profile PT Sunggiardi Prima Konstruksi</h3>
+                    <h3 class="sgd-modal-title sgd-h3">Unduh Company Profile SGD Construction</h3>
                 </div>
             </div>
             <button type="button" class="sgd-modal-close" id="sgdProfileModalClose" aria-label="Tutup">
@@ -394,6 +406,218 @@
                     </p>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+
+<!-- Email Options Modal (Solves mailto ERR_UNKNOWN_URL_SCHEME on Chrome/Mac) -->
+<div class="sgd-profile-modal sgd-email-modal" id="sgdEmailModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="sgd-modal-backdrop" id="sgdEmailModalBackdrop"></div>
+    <div class="sgd-modal-dialog sgd-profile-modal-dialog sgd-email-modal-dialog">
+        <div class="sgd-modal-header sgd-border-0">
+            <div class="sgd-d-flex sgd-items-center sgd-gap-3">
+                <div class="sgd-email-modal-icon">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <div>
+                    <span class="sgd-category-badge">HUBUNGI KAMI VIA EMAIL</span>
+                    <h3 class="sgd-modal-title sgd-h3"><?php echo esc_html( SGD_EMAIL ); ?></h3>
+                </div>
+            </div>
+            <button type="button" class="sgd-modal-close" id="sgdEmailModalClose" aria-label="Tutup Dialog Email">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="sgd-modal-body">
+            <p class="sgd-modal-sublead">
+                Pilih opsi pengiriman email yang paling sesuai dengan perangkat dan aplikasi Anda:
+            </p>
+
+            <div class="sgd-email-options-grid">
+                <!-- Option 1: Gmail Web (Best for Chrome & Mac) -->
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=<?php echo urlencode( SGD_EMAIL ); ?>&su=Inquiry%20Proyek%20Konstruksi%20-%20SGD" target="_blank" rel="noopener noreferrer" class="sgd-email-option-card sgd-email-opt-gmail">
+                    <div class="sgd-email-opt-icon">
+                        <i class="fa-brands fa-google"></i>
+                    </div>
+                    <div class="sgd-email-opt-info">
+                        <strong>Buka di Gmail (Web Browser)</strong>
+                        <span>Langsung terbuka di Chrome / Browser tanpa perlu aplikasi Mail</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square sgd-email-opt-arrow"></i>
+                </a>
+
+                <!-- Option 2: Copy to Clipboard -->
+                <button type="button" class="sgd-email-option-card sgd-email-opt-copy" id="sgdCopyEmailBtn" data-email="<?php echo esc_attr( SGD_EMAIL ); ?>">
+                    <div class="sgd-email-opt-icon">
+                        <i class="fa-regular fa-copy" id="sgdCopyIcon"></i>
+                    </div>
+                    <div class="sgd-email-opt-info">
+                        <strong id="sgdCopyText">Salin Alamat Email</strong>
+                        <span id="sgdCopySubtext">Klik untuk menyalin <code><?php echo esc_html( SGD_EMAIL ); ?></code> ke clipboard</span>
+                    </div>
+                    <span class="sgd-copy-badge" id="sgdCopyBadge"><i class="fa-solid fa-check"></i> Tersalin!</span>
+                </button>
+
+                <!-- Option 3: Native Mail Client (mailto:) -->
+                <a href="mailto:<?php echo esc_attr( SGD_EMAIL ); ?>" class="sgd-email-option-card sgd-email-opt-native">
+                    <div class="sgd-email-opt-icon">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <div class="sgd-email-opt-info">
+                        <strong>Aplikasi Email Default (Mail / Outlook)</strong>
+                        <span>Buka via Apple Mail, Microsoft Outlook, atau Thunderbird jika terpasang</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right sgd-email-opt-arrow"></i>
+                </a>
+
+                <!-- Option 4: Website Contact Form -->
+                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="sgd-email-option-card sgd-email-opt-form">
+                    <div class="sgd-email-opt-icon">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
+                    <div class="sgd-email-opt-info">
+                        <strong>Kirim Formulir Inquiry Online</strong>
+                        <span>Kirim detail proyek, luas tanah, dan spesifikasi bangunan langsung di web</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right sgd-email-opt-arrow"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="sgd-modal-footer">
+            <span class="sgd-email-response-time"><i class="fa-solid fa-bolt text-gold"></i> Estimasi respon email tim engineer SGD: &lt; 2 jam kerja</span>
+            <button type="button" class="sgd-btn sgd-btn-outline" id="sgdEmailModalCloseBtn">
+                Tutup
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- SGD Standards & Material Standard Modal -->
+<div class="sgd-profile-modal" id="sgdStandardsModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="sgd-modal-backdrop" id="sgdStandardsModalBackdrop"></div>
+    <div class="sgd-modal-dialog sgd-profile-modal-dialog" style="max-width: 780px;">
+        <div class="sgd-modal-header sgd-border-0">
+            <div class="sgd-d-flex sgd-items-center sgd-gap-3">
+                <div class="sgd-profile-modal-icon" style="background: rgba(202, 138, 4, 0.15); color: #CA8A04;">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div>
+                    <span class="sgd-category-badge" data-i18n-id="SGD QUALITY ASSURANCE" data-i18n-en="SGD QUALITY ASSURANCE">SGD QUALITY ASSURANCE</span>
+                    <h3 class="sgd-modal-title sgd-h3" data-i18n-id="SGD Standard & Material Standard" data-i18n-en="SGD Standard & Material Standard">SGD Standard &amp; Material Standard</h3>
+                </div>
+            </div>
+            <button type="button" class="sgd-modal-close" id="sgdStandardsModalClose" aria-label="Tutup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="sgd-modal-body" style="padding-top: 10px;">
+            <p class="sgd-modal-sublead" data-i18n-id="Standar ketat SGD Construction dalam pemilihan rantai pasok material, metodologi pengerjaan, dan jaminan mutu konstruksi." data-i18n-en="Strict SGD Construction standards for supply chain material selection, execution methodology, and quality assurance.">
+                Standar ketat SGD Construction dalam pemilihan rantai pasok material, metodologi pengerjaan, dan jaminan mutu konstruksi di setiap proyek.
+            </p>
+
+            <div class="sgd-standards-content">
+                <h4 style="margin: 20px 0 12px; font-size: 1.1rem; color: var(--sgd-slate-900, #0F172A); display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-truck-ramp-box" style="color: #CA8A04;"></i>
+                    <span data-i18n-id="Mitra Standar Produsen Material & Rantai Pasok Resmi SGD:" data-i18n-en="Official Supply Chain & Material Producer Partners:">Mitra Standar Produsen Material &amp; Rantai Pasok Resmi SGD:</span>
+                </h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-bottom: 24px;">
+                    <div style="padding: 10px 14px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; display: flex; align-items: center; gap: 12px;">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/brands/cs-steel.svg' ); ?>" alt="CS Steel" width="36" height="36" style="width: 36px; height: 36px; object-fit: contain; flex-shrink: 0;">
+                        <div>
+                            <strong style="color: #0F172A; display: block; font-size: 0.9rem;">1. Besi Beton</strong>
+                            <span style="color: #475569; font-size: 0.85rem;">Cakratunggal Steel (CS) atau Baja Perwira Steel</span>
+                        </div>
+                    </div>
+                    <div style="padding: 10px 14px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; display: flex; align-items: center; gap: 12px;">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/brands/lautan-steel.svg' ); ?>" alt="Lautan Steel" width="36" height="36" style="width: 36px; height: 36px; object-fit: contain; flex-shrink: 0;">
+                        <div>
+                            <strong style="color: #0F172A; display: block; font-size: 0.9rem;">2. Baja</strong>
+                            <span style="color: #475569; font-size: 0.85rem;">Lautan Steel</span>
+                        </div>
+                    </div>
+                    <div style="padding: 10px 14px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; display: flex; align-items: center; gap: 12px;">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/brands/indocement.svg' ); ?>" alt="Indocement" width="36" height="36" style="width: 36px; height: 36px; object-fit: contain; flex-shrink: 0;">
+                        <div>
+                            <strong style="color: #0F172A; display: block; font-size: 0.9rem;">3. Semen</strong>
+                            <span style="color: #475569; font-size: 0.85rem;">Indocement / Holcim</span>
+                        </div>
+                    </div>
+                    <div style="padding: 10px 14px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; display: flex; align-items: center; gap: 12px;">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/brands/mortar-utama.svg' ); ?>" alt="Mortar Utama" width="36" height="36" style="width: 36px; height: 36px; object-fit: contain; flex-shrink: 0;">
+                        <div>
+                            <strong style="color: #0F172A; display: block; font-size: 0.9rem;">4. Mortar</strong>
+                            <span style="color: #475569; font-size: 0.85rem;">Mortar Utama / Drymix</span>
+                        </div>
+                    </div>
+                    <div style="padding: 10px 14px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; display: flex; align-items: center; gap: 12px;">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/brands/astral.svg' ); ?>" alt="Astral" width="36" height="36" style="width: 36px; height: 36px; object-fit: contain; flex-shrink: 0;">
+                        <div>
+                            <strong style="color: #0F172A; display: block; font-size: 0.9rem;">5. Alumunium</strong>
+                            <span style="color: #475569; font-size: 0.85rem;">Astral</span>
+                        </div>
+                    </div>
+                    <div style="padding: 10px 14px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; display: flex; align-items: center; gap: 12px;">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/brands/ykk-aleksindo.svg' ); ?>" alt="YKK Aleksindo" width="36" height="36" style="width: 36px; height: 36px; object-fit: contain; flex-shrink: 0;">
+                        <div>
+                            <strong style="color: #0F172A; display: block; font-size: 0.9rem;">6. Alumunium Rakitan</strong>
+                            <span style="color: #475569; font-size: 0.85rem;">YKK / Aleksindo</span>
+                        </div>
+                    </div>
+                    <div style="padding: 10px 14px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; display: flex; align-items: center; gap: 12px;">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/brands/jayaboard.svg' ); ?>" alt="Jayaboard" width="36" height="36" style="width: 36px; height: 36px; object-fit: contain; flex-shrink: 0;">
+                        <div>
+                            <strong style="color: #0F172A; display: block; font-size: 0.9rem;">7. Plafond</strong>
+                            <span style="color: #475569; font-size: 0.85rem;">Gypsum Jayaboard atau Panel Sheet</span>
+                        </div>
+                    </div>
+                    <div style="padding: 10px 14px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; display: flex; align-items: center; gap: 12px;">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/brands/supreme-cable.svg' ); ?>" alt="Supreme Cable" width="36" height="36" style="width: 36px; height: 36px; object-fit: contain; flex-shrink: 0;">
+                        <div>
+                            <strong style="color: #0F172A; display: block; font-size: 0.9rem;">8. Kabel Elektrikal</strong>
+                            <span style="color: #475569; font-size: 0.85rem;">Kabel Supreme</span>
+                        </div>
+                    </div>
+                    <div style="padding: 10px 14px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; display: flex; align-items: center; gap: 12px;">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/brands/rucika.svg' ); ?>" alt="Rucika" width="36" height="36" style="width: 36px; height: 36px; object-fit: contain; flex-shrink: 0;">
+                        <div>
+                            <strong style="color: #0F172A; display: block; font-size: 0.9rem;">9. Pipa</strong>
+                            <span style="color: #475569; font-size: 0.85rem;">Rucika / Wavin</span>
+                        </div>
+                    </div>
+                    <div style="padding: 10px 14px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; display: flex; align-items: center; gap: 12px;">
+                        <img src="<?php echo esc_url( SGD_THEME_URI . '/assets/images/brands/paint-brands.svg' ); ?>" alt="Cat Brands" width="36" height="36" style="width: 36px; height: 36px; object-fit: contain; flex-shrink: 0;">
+                        <div>
+                            <strong style="color: #0F172A; display: block; font-size: 0.9rem;">10. Cat</strong>
+                            <span style="color: #475569; font-size: 0.85rem;">Jotun, Mowilex, Propan, Dulux</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="margin: 20px 0 12px; font-size: 1.1rem; color: var(--sgd-slate-900, #0F172A); display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-shield-halved" style="color: #CA8A04;"></i>
+                    <span data-i18n-id="SGD Quality Standard & Sistem Kontrak" data-i18n-en="SGD Quality Standard & Contract System">SGD Quality Standard &amp; Sistem Kontrak</span>
+                </h4>
+                <div style="background: #FFFBEB; border: 1px solid #FDE68A; padding: 14px; border-radius: 8px; margin-bottom: 16px;">
+                    <ul style="margin: 0; padding-left: 20px; color: #92400E; font-size: 0.88rem; line-height: 1.6;">
+                        <li><strong>Standar Material SNI & Internasional:</strong> Seluruh komponen struktur dan utilitas telah melalui verifikasi laboratorium resmi.</li>
+                        <li><strong>Fleksibilitas Sistem Kontrak:</strong> Lumpsum Fixed Price, Cost Plus Fee, Supply by Owner, atau kombinasi berbasis FIDIC.</li>
+                        <li><strong>Jaminan Purna Jual & Perawatan:</strong> Didukung penuh oleh unit <strong>SGD Care</strong> untuk perawatan berkala paska serah terima (BAST).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="sgd-modal-footer">
+            <a href="<?php echo esc_url( sgd_get_wa_link('Halo SGD Construction, saya ingin konsultasi detail spesifikasi material dan SGD Standard.') ); ?>" target="_blank" class="sgd-btn sgd-btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> <span>Konsultasi Spesifikasi via WA</span>
+            </a>
+            <button type="button" class="sgd-btn sgd-btn-outline" id="sgdStandardsModalCloseBtn">
+                Tutup
+            </button>
         </div>
     </div>
 </div>

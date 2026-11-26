@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- MU Mortar Utama Official Style Logo -->
+  <defs>
+    <linearGradient id="muRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E11D48"/>
+      <stop offset="100%" stop-color="#BE123C"/>
+    </linearGradient>
+  </defs>
+  <!-- Red Rounded Shield / Badge -->
+  <rect x="10" y="14" width="80" height="52" rx="10" fill="url(#muRed)"/>
+  <!-- MU Big Letters -->
+  <text x="50" y="52" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">MU</text>
+  <!-- Inner divider line -->
+  <line x1="22" y1="58" x2="78" y2="58" stroke="#FFE4E6" stroke-width="2" stroke-linecap="round"/>
+  <!-- MORTAR UTAMA subtitle -->
+  <text x="50" y="78" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="7.5" font-weight="900" fill="#0F172A" text-anchor="middle" letter-spacing="1.2">MORTAR UTAMA</text>
+  <text x="50" y="89" font-family="'Inter', sans-serif" font-size="6" font-weight="700" fill="#64748B" text-anchor="middle" letter-spacing="1">weber / drymix</text>
+</svg>

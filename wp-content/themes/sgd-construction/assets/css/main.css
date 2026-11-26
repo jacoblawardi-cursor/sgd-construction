@@ -1,6 +1,6 @@
 /* ==========================================================================
    SGD CONSTRUCTION - MODERN CORPORATE DESIGN SYSTEM
-   PT Sunggiardi Prima Konstruksi
+   SGD Construction
    ========================================================================== */
 
 :root {
@@ -829,6 +829,21 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+}
+.sgd-services-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+@media (max-width: 1200px) {
+    .sgd-services-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 640px) {
+    .sgd-services-grid-4 {
+        grid-template-columns: 1fr;
+    }
 }
 .sgd-service-card {
     background: #FFFFFF;
@@ -2649,6 +2664,251 @@ ul {
     padding: 16px 20px;
 }
 
+/* ==========================================================================
+   THEME SWITCHER UI COMPONENTS (WoW <-> Genshin Impact)
+   ========================================================================== */
+.sgd-theme-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    padding: 2px 8px;
+    transition: var(--sgd-transition);
+}
+.sgd-theme-switcher:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.12);
+}
+.sgd-theme-btn {
+    background: none;
+    border: none;
+    color: var(--sgd-slate-300);
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: var(--sgd-transition);
+    line-height: 1.3;
+}
+.sgd-theme-icon {
+    font-size: 0.85rem;
+    line-height: 1;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+.sgd-theme-btn:hover .sgd-theme-icon {
+    transform: scale(1.15);
+}
+.sgd-theme-btn.active {
+    color: var(--sgd-gold-400);
+    background: rgba(234, 179, 8, 0.18);
+    box-shadow: 0 0 10px rgba(234, 179, 8, 0.25);
+}
+[data-theme="genshin"] .sgd-theme-btn[data-theme="genshin"].active {
+    color: #3CE8D8;
+    background: rgba(60, 232, 216, 0.18);
+    box-shadow: 0 0 12px rgba(60, 232, 216, 0.35);
+}
+.sgd-theme-sep {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 0.75rem;
+}
+
+/* Mobile Drawer Theme Bar */
+.sgd-drawer-theme-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--sgd-slate-200);
+    background: var(--sgd-slate-50);
+}
+.sgd-drawer-theme-bar .sgd-theme-switcher {
+    background: #FFFFFF;
+    border-color: var(--sgd-slate-300);
+}
+.sgd-drawer-theme-bar .sgd-theme-btn {
+    color: var(--sgd-primary-700);
+}
+.sgd-drawer-theme-bar .sgd-theme-btn.active {
+    color: var(--sgd-gold-600);
+    background: rgba(234, 179, 8, 0.15);
+    font-weight: 800;
+}
+[data-theme="genshin"] .sgd-drawer-theme-bar .sgd-theme-btn[data-theme="genshin"].active {
+    color: #0d9488;
+    background: rgba(60, 232, 216, 0.2);
+}
+
+/* Floating Quick Theme Switcher Pill */
+.sgd-floating-theme {
+    position: fixed;
+    bottom: 28px;
+    left: 24px;
+    z-index: 1800;
+}
+.sgd-floating-theme-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(14px);
+    border: 1.5px solid rgba(234, 179, 8, 0.5);
+    border-radius: 9999px;
+    padding: 8px 16px 8px 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 16px rgba(234, 179, 8, 0.25);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sgd-floating-theme-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    border-color: var(--sgd-gold-400);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45), 0 0 24px rgba(234, 179, 8, 0.45);
+}
+.sgd-floating-theme-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(234, 179, 8, 0.2);
+    color: var(--sgd-gold-400);
+    transition: transform 0.3s ease;
+}
+.sgd-floating-theme-btn:hover .sgd-floating-theme-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+.sgd-floating-theme-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.1;
+}
+.sgd-floating-theme-tiny {
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--sgd-gold-400);
+    text-transform: uppercase;
+}
+.sgd-floating-theme-name {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    font-family: var(--sgd-font-heading);
+}
+.sgd-floating-theme-pill {
+    font-size: 0.68rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 3px 8px;
+    border-radius: 9999px;
+    color: var(--sgd-slate-300);
+    margin-left: 2px;
+}
+[data-theme="genshin"] .sgd-floating-theme-btn {
+    background: rgba(14, 18, 35, 0.94);
+    border-color: rgba(60, 232, 216, 0.6);
+    box-shadow: 0 10px 30px rgba(11, 14, 27, 0.45), 0 0 20px rgba(60, 232, 216, 0.3);
+}
+[data-theme="genshin"] .sgd-floating-theme-btn:hover {
+    border-color: #3CE8D8;
+    box-shadow: 0 14px 36px rgba(11, 14, 27, 0.55), 0 0 28px rgba(60, 232, 216, 0.5);
+}
+[data-theme="genshin"] .sgd-floating-theme-icon {
+    background: rgba(60, 232, 216, 0.18);
+    color: #3CE8D8;
+}
+[data-theme="genshin"] .sgd-floating-theme-tiny {
+    color: #3CE8D8;
+}
+
+/* Toast notification */
+.sgd-theme-toast {
+    position: fixed;
+    top: 90px;
+    right: 24px;
+    z-index: 99999;
+    opacity: 0;
+    transform: translateY(-16px) scale(0.96);
+    pointer-events: none;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sgd-theme-toast.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.sgd-toast-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(15, 23, 42, 0.96);
+    border: 1.5px solid var(--sgd-gold-500);
+    border-radius: 14px;
+    padding: 10px 18px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(234, 179, 8, 0.35);
+    color: #FFFFFF;
+    backdrop-filter: blur(14px);
+}
+.sgd-toast-inner strong {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+.sgd-toast-inner small {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--sgd-slate-300);
+}
+.sgd-toast-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+[data-theme="genshin"] .sgd-toast-inner {
+    background: rgba(14, 18, 35, 0.96);
+    border-color: #3CE8D8;
+    box-shadow: 0 16px 40px rgba(11, 14, 27, 0.5), 0 0 28px rgba(60, 232, 216, 0.4);
+}
+[data-theme="genshin"] .sgd-toast-inner strong {
+    color: #F7DC87;
+}
+
+@media (max-width: 768px) {
+    .sgd-floating-theme {
+        bottom: 20px;
+        left: 16px;
+    }
+    .sgd-floating-theme-btn {
+        padding: 6px 12px 6px 8px;
+        gap: 6px;
+    }
+    .sgd-floating-theme-tiny {
+        display: none;
+    }
+    .sgd-floating-theme-name {
+        font-size: 0.8rem;
+    }
+    .sgd-floating-theme-pill {
+        display: none;
+    }
+    .sgd-theme-toast {
+        right: 16px;
+        left: 16px;
+        top: 70px;
+    }
+}
+
 /* --------------------------------------------------------------------------
    Interactive Construction Cost Estimator
    -------------------------------------------------------------------------- */
@@ -3186,13 +3446,13 @@ ul {
 .sgd-partner-pills-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 14px;
 }
 .sgd-partner-pill {
     background: #FFFFFF;
     border: 1px solid var(--sgd-slate-200);
     border-radius: var(--sgd-radius-md);
-    padding: 12px 16px;
+    padding: 12px 14px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -3203,19 +3463,60 @@ ul {
     transform: translateY(-2px);
     box-shadow: var(--sgd-shadow-sm);
 }
+.sgd-partner-logo {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    transition: var(--sgd-transition);
+    overflow: visible;
+    flex-shrink: 0;
+}
+.sgd-partner-logo img,
+.sgd-partner-logo svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+    transition: transform 0.25s ease;
+}
+.sgd-partner-pill:hover .sgd-partner-logo {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+}
+.sgd-partner-pill:hover .sgd-partner-logo img,
+.sgd-partner-pill:hover .sgd-partner-logo svg {
+    transform: scale(1.1);
+}
 .sgd-partner-pill i {
     font-size: 1.3rem;
     color: var(--sgd-primary-700);
 }
+.sgd-partner-info {
+    flex: 1;
+    min-width: 0;
+}
 .sgd-partner-pill strong {
     font-size: 0.85rem;
+    font-weight: 700;
     color: var(--sgd-primary-950);
     display: block;
+    line-height: 1.3;
 }
 .sgd-partner-pill span {
     font-size: 0.72rem;
     color: var(--sgd-primary-600);
     display: block;
+    line-height: 1.3;
+    margin-top: 2px;
 }
 
 /* Digital Transparency Controls */
@@ -3511,6 +3812,162 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
+   Email Options Modal (Prevents Chrome/Mac mailto error)
+   -------------------------------------------------------------------------- */
+.sgd-email-modal-dialog {
+    max-width: 540px;
+}
+.sgd-email-modal-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #EFF6FF;
+    color: #2563EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+.sgd-email-options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+.sgd-email-option-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: #F8FAFC;
+    border: 1px solid var(--sgd-slate-200);
+    border-radius: var(--sgd-radius-lg);
+    text-decoration: none;
+    color: inherit;
+    transition: var(--sgd-transition);
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    font-family: inherit;
+}
+.sgd-email-option-card:hover {
+    background: #FFFFFF;
+    border-color: var(--sgd-gold-500);
+    transform: translateY(-2px);
+    box-shadow: var(--sgd-shadow-md);
+}
+.sgd-email-opt-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    border: 1px solid var(--sgd-slate-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    transition: var(--sgd-transition);
+}
+.sgd-email-opt-gmail .sgd-email-opt-icon {
+    color: #EA4335;
+    background: #FEF2F2;
+    border-color: #FECACA;
+}
+.sgd-email-opt-copy .sgd-email-opt-icon {
+    color: #2563EB;
+    background: #EFF6FF;
+    border-color: #BFDBFE;
+}
+.sgd-email-opt-native .sgd-email-opt-icon {
+    color: #475569;
+    background: #F1F5F9;
+    border-color: #CBD5E1;
+}
+.sgd-email-opt-form .sgd-email-opt-icon {
+    color: var(--sgd-gold-700);
+    background: #FEF9C3;
+    border-color: #FDE047;
+}
+.sgd-email-opt-info {
+    flex: 1;
+    min-width: 0;
+}
+.sgd-email-opt-info strong {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--sgd-primary-950);
+    margin-bottom: 2px;
+}
+.sgd-email-opt-info span {
+    display: block;
+    font-size: 0.76rem;
+    color: var(--sgd-primary-600);
+    line-height: 1.35;
+}
+.sgd-email-opt-info code {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85em;
+}
+.sgd-email-opt-arrow {
+    color: var(--sgd-slate-400);
+    font-size: 0.85rem;
+    transition: var(--sgd-transition);
+    flex-shrink: 0;
+}
+.sgd-email-option-card:hover .sgd-email-opt-arrow {
+    color: var(--sgd-gold-600);
+    transform: translateX(3px);
+}
+.sgd-copy-badge {
+    display: none;
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    flex-shrink: 0;
+}
+.sgd-copy-badge.show {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    animation: sgdBadgeFade 0.3s ease;
+}
+.sgd-email-response-time {
+    font-size: 0.78rem;
+    color: var(--sgd-primary-600);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+[data-theme="genshin"] .sgd-email-modal-dialog {
+    border: 1px solid rgba(229, 184, 79, 0.3);
+}
+[data-theme="genshin"] .sgd-email-option-card {
+    background: rgba(22, 33, 62, 0.5);
+    border-color: rgba(60, 232, 216, 0.2);
+    color: #E2E8F0;
+}
+[data-theme="genshin"] .sgd-email-option-card:hover {
+    background: rgba(22, 33, 62, 0.85);
+    border-color: rgba(60, 232, 216, 0.7);
+}
+[data-theme="genshin"] .sgd-email-opt-info strong {
+    color: #FFFFFF;
+}
+[data-theme="genshin"] .sgd-email-opt-info span {
+    color: #94A3B8;
+}
+
+/* --------------------------------------------------------------------------
    Leadership Team (page-about)
    -------------------------------------------------------------------------- */
 .sgd-team-grid {
@@ -3704,4 +4161,418 @@ ul {
     .sgd-ba-slider {
         height: 250px;
     }
+}
+
+/* ==========================================================================
+   THEME DEFINITIONS: WORLD OF WARCRAFT & GENSHIN IMPACT
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. WORLD OF WARCRAFT THEME (Default / data-theme="wow")
+   Aesthetic: Azeroth / Stormwind Royal Gold, Dark Ironstone & Heavy Craftsmanship
+   -------------------------------------------------------------------------- */
+html[data-theme="wow"],
+body.theme-wow {
+    --sgd-primary-950: #070B14;
+    --sgd-primary-900: #0F172A;
+    --sgd-primary-800: #1E293B;
+    --sgd-primary-700: #334155;
+    --sgd-primary-600: #475569;
+    
+    --sgd-gold-500: #EAB308;
+    --sgd-gold-600: #CA8A04;
+    --sgd-gold-400: #FACC15;
+    --sgd-gold-100: #FEF9C3;
+}
+
+[data-theme="wow"] h1,
+[data-theme="wow"] h2,
+[data-theme="wow"] .sgd-hero-title,
+[data-theme="wow"] .sgd-section-heading,
+[data-theme="wow"] .sgd-modal-title {
+    font-family: 'Cinzel', 'Plus Jakarta Sans', serif;
+    letter-spacing: 0.5px;
+}
+
+[data-theme="wow"] .sgd-hero-badge {
+    border: 1px solid rgba(234, 179, 8, 0.4);
+    background: rgba(15, 23, 42, 0.7);
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
+}
+
+[data-theme="wow"] .sgd-btn-gold,
+[data-theme="wow"] .sgd-btn-primary {
+    box-shadow: 0 4px 14px rgba(234, 179, 8, 0.35);
+    border: 1px solid rgba(254, 240, 138, 0.4);
+}
+
+[data-theme="wow"] .sgd-btn-gold:hover,
+[data-theme="wow"] .sgd-btn-primary:hover {
+    box-shadow: 0 6px 22px rgba(234, 179, 8, 0.55), 0 0 15px rgba(234, 179, 8, 0.3);
+}
+
+[data-theme="wow"] .sgd-service-card,
+[data-theme="wow"] .sgd-project-card,
+[data-theme="wow"] .sgd-value-card {
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    transition: var(--sgd-transition);
+}
+
+[data-theme="wow"] .sgd-service-card:hover,
+[data-theme="wow"] .sgd-project-card:hover,
+[data-theme="wow"] .sgd-value-card:hover {
+    border-color: rgba(234, 179, 8, 0.6);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12), 0 0 20px rgba(234, 179, 8, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   2. GENSHIN IMPACT THEME (data-theme="genshin")
+   Aesthetic: Teyvat / Celestia / Primogem Radiant Gold & Astral Vision Cyan
+   -------------------------------------------------------------------------- */
+html[data-theme="genshin"],
+body.theme-genshin {
+    /* Celestia & Astral Night Indigo Palettes */
+    --sgd-primary-950: #0B0E1B; /* Astral Deep Abyss */
+    --sgd-primary-900: #12182B; /* Celestia Deep Sky */
+    --sgd-primary-800: #1B223D; /* Dusk Astral Indigo */
+    --sgd-primary-700: #293457;
+    --sgd-primary-600: #3E4D7E;
+    
+    /* Primogem & Mora Radiant Warm Gold */
+    --sgd-gold-500: #E5B84F; /* Signature Primogem / Mora Amber */
+    --sgd-gold-600: #C99B35; /* Deep Mora Bronze */
+    --sgd-gold-400: #F7DC87; /* Radiant Astral Gold */
+    --sgd-gold-100: #FFF9E6; /* Celestia Pearl */
+    
+    /* Celestia Vision Accents */
+    --sgd-vision-cyan: #3CE8D8;
+    --sgd-vision-glow: rgba(60, 232, 216, 0.35);
+    --sgd-primogem-purple: #9D71FD;
+    
+    /* Slate / Card Surfaces */
+    --sgd-slate-50: #F4F6FC;
+    --sgd-slate-100: #E9EDF8;
+    --sgd-slate-200: #D3DBEE;
+    --sgd-slate-300: #A8B8DE;
+    --sgd-slate-400: #7E90BA;
+    --sgd-slate-700: #293457;
+    --sgd-slate-800: #1B223D;
+    
+    /* Smooth rounded Genshin curves */
+    --sgd-radius-sm: 8px;
+    --sgd-radius-md: 14px;
+    --sgd-radius-lg: 20px;
+    --sgd-radius-xl: 28px;
+    
+    /* Astral Shadows & Starlight Luminosity */
+    --sgd-shadow-sm: 0 2px 8px rgba(11, 14, 27, 0.08);
+    --sgd-shadow-md: 0 8px 24px rgba(11, 14, 27, 0.12);
+    --sgd-shadow-lg: 0 16px 40px rgba(11, 14, 27, 0.18), 0 0 20px rgba(60, 232, 216, 0.08);
+    --sgd-shadow-xl: 0 24px 60px rgba(11, 14, 27, 0.28), 0 0 30px rgba(229, 184, 79, 0.15);
+}
+
+/* Genshin Typography & Starlight Elements */
+[data-theme="genshin"] body {
+    background-color: #F8F9FE;
+    color: #293457;
+}
+
+[data-theme="genshin"] h1,
+[data-theme="genshin"] h2,
+[data-theme="genshin"] h3,
+[data-theme="genshin"] h4 {
+    color: #12182B;
+    letter-spacing: -0.2px;
+}
+
+[data-theme="genshin"] .sgd-text-gradient {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F7DC87 60%, #3CE8D8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(60, 232, 216, 0.25));
+}
+
+/* Genshin Header & Topbar */
+[data-theme="genshin"] .sgd-topbar {
+    background: rgba(11, 14, 27, 0.96);
+    border-bottom: 1px solid rgba(60, 232, 216, 0.18);
+    color: #A8B8DE;
+}
+[data-theme="genshin"] .sgd-topbar-item i {
+    color: #3CE8D8;
+}
+[data-theme="genshin"] .sgd-navbar {
+    background: rgba(14, 18, 35, 0.94);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(229, 184, 79, 0.25);
+    box-shadow: 0 4px 20px rgba(11, 14, 27, 0.35);
+}
+[data-theme="genshin"] .sgd-nav-link:hover,
+[data-theme="genshin"] .sgd-nav-link.active {
+    color: #F7DC87;
+    text-shadow: 0 0 10px rgba(247, 220, 135, 0.4);
+}
+[data-theme="genshin"] .sgd-nav-link.active::after {
+    background: linear-gradient(90deg, #3CE8D8, #F7DC87);
+    box-shadow: 0 0 10px #3CE8D8;
+    height: 3px;
+    border-radius: 9999px;
+}
+
+/* Genshin Hero Banner */
+[data-theme="genshin"] .sgd-hero-overlay {
+    background: radial-gradient(circle at 50% 25%, rgba(60, 232, 216, 0.18) 0%, rgba(157, 113, 253, 0.14) 40%, rgba(11, 14, 27, 0.92) 100%) !important;
+}
+[data-theme="genshin"] .sgd-hero-badge {
+    border: 1px solid rgba(60, 232, 216, 0.5);
+    background: rgba(14, 18, 35, 0.85);
+    color: #3CE8D8;
+    border-radius: 9999px;
+    box-shadow: 0 0 18px rgba(60, 232, 216, 0.25);
+    backdrop-filter: blur(8px);
+}
+[data-theme="genshin"] .sgd-hero-badge i {
+    color: #F7DC87;
+}
+[data-theme="genshin"] .sgd-hero-stats {
+    background: rgba(18, 24, 43, 0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(229, 184, 79, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(11, 14, 27, 0.5), 0 0 25px rgba(60, 232, 216, 0.15);
+}
+[data-theme="genshin"] .sgd-stat-num {
+    color: #F7DC87;
+    text-shadow: 0 0 15px rgba(247, 220, 135, 0.4);
+}
+[data-theme="genshin"] .sgd-stat-num span {
+    color: #3CE8D8;
+}
+
+/* Genshin Wish & Menu Buttons */
+[data-theme="genshin"] .sgd-btn {
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Primary / Gold Button: HoYoverse Wish Style */
+[data-theme="genshin"] .sgd-btn-gold,
+[data-theme="genshin"] .sgd-btn-primary {
+    background: linear-gradient(135deg, #FBE59E 0%, #E5B84F 50%, #C8972E 100%) !important;
+    color: #3A2604 !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 4px 18px rgba(229, 184, 79, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+[data-theme="genshin"] .sgd-btn-gold:hover,
+[data-theme="genshin"] .sgd-btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(229, 184, 79, 0.65), 0 0 20px rgba(60, 232, 216, 0.35);
+}
+
+/* Outline Buttons: Celestial Frosted Pill */
+[data-theme="genshin"] .sgd-btn-outline-gold {
+    border: 1.5px solid #E5B84F !important;
+    color: #F7DC87 !important;
+    background: rgba(229, 184, 79, 0.08) !important;
+    box-shadow: 0 0 15px rgba(229, 184, 79, 0.2);
+}
+[data-theme="genshin"] .sgd-btn-outline-gold:hover {
+    background: rgba(229, 184, 79, 0.2) !important;
+    box-shadow: 0 0 22px rgba(229, 184, 79, 0.45);
+    color: #FFFFFF !important;
+}
+
+[data-theme="genshin"] .sgd-btn-outline-white {
+    border: 1.5px solid rgba(60, 232, 216, 0.7) !important;
+    color: #3CE8D8 !important;
+    background: rgba(60, 232, 216, 0.06) !important;
+}
+[data-theme="genshin"] .sgd-btn-outline-white:hover {
+    background: rgba(60, 232, 216, 0.2) !important;
+    box-shadow: 0 0 22px rgba(60, 232, 216, 0.5) !important;
+    color: #FFFFFF !important;
+}
+
+[data-theme="genshin"] .sgd-btn-dark {
+    background: #1B223D;
+    border: 1px solid rgba(229, 184, 79, 0.3);
+    color: #FFFFFF;
+}
+[data-theme="genshin"] .sgd-btn-dark:hover {
+    background: #242D50;
+    border-color: #3CE8D8;
+    box-shadow: 0 0 18px rgba(60, 232, 216, 0.3);
+}
+
+/* Badges & Section Tags: Primogem ✦ Flair */
+[data-theme="genshin"] .sgd-section-tag {
+    color: #C99B35;
+    letter-spacing: 2px;
+}
+[data-theme="genshin"] .sgd-section-tag::before {
+    content: "✦ ";
+    color: #3CE8D8;
+}
+[data-theme="genshin"] .sgd-section-tag::after {
+    content: " ✦";
+    color: #3CE8D8;
+}
+[data-theme="genshin"] .sgd-tag-gold {
+    color: #3CE8D8 !important;
+}
+[data-theme="genshin"] .sgd-badge-accent {
+    background: rgba(60, 232, 216, 0.12);
+    color: #0d9488;
+    border: 1px solid rgba(60, 232, 216, 0.4);
+    box-shadow: 0 0 12px rgba(60, 232, 216, 0.18);
+}
+[data-theme="genshin"] .sgd-badge-mini {
+    background: linear-gradient(135deg, #FBE59E, #E5B84F);
+    color: #3A2604;
+    border-radius: 9999px;
+    padding: 3px 10px;
+}
+
+/* Cards & Content Surfaces: Frosted Celestia Frames */
+[data-theme="genshin"] .sgd-service-card,
+[data-theme="genshin"] .sgd-project-card,
+[data-theme="genshin"] .sgd-value-card,
+[data-theme="genshin"] .sgd-step-item,
+[data-theme="genshin"] .sgd-estimator-card,
+[data-theme="genshin"] .sgd-transparency-card,
+[data-theme="genshin"] .sgd-partner-pill {
+    border-radius: 20px;
+    border: 1px solid rgba(229, 184, 79, 0.25);
+    box-shadow: 0 10px 30px rgba(11, 14, 27, 0.06), 0 0 15px rgba(60, 232, 216, 0.04);
+    transition: var(--sgd-transition);
+}
+[data-theme="genshin"] .sgd-partner-logo {
+    background: transparent;
+    border: none;
+}
+[data-theme="genshin"] .sgd-partner-pill:hover .sgd-partner-logo {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+}
+[data-theme="genshin"] .sgd-service-card:hover,
+[data-theme="genshin"] .sgd-project-card:hover,
+[data-theme="genshin"] .sgd-value-card:hover,
+[data-theme="genshin"] .sgd-step-item:hover {
+    transform: translateY(-6px);
+    border-color: rgba(60, 232, 216, 0.7);
+    box-shadow: 0 18px 45px rgba(11, 14, 27, 0.12), 0 0 25px rgba(60, 232, 216, 0.25);
+}
+
+[data-theme="genshin"] .sgd-service-icon {
+    background: linear-gradient(135deg, rgba(60, 232, 216, 0.15), rgba(229, 184, 79, 0.15));
+    border: 1px solid rgba(60, 232, 216, 0.4);
+    color: #3CE8D8;
+    box-shadow: 0 0 15px rgba(60, 232, 216, 0.2);
+}
+
+[data-theme="genshin"] .sgd-check-icon {
+    background: linear-gradient(135deg, #3CE8D8, #0EA5E9);
+    color: #0B0E1B;
+    box-shadow: 0 0 12px rgba(60, 232, 216, 0.4);
+}
+
+/* Estimator & Interactive Modules */
+[data-theme="genshin"] .sgd-est-step-num {
+    background: linear-gradient(135deg, #1B223D, #12182B);
+    color: #F7DC87;
+    border: 1px solid rgba(60, 232, 216, 0.4);
+    box-shadow: 0 0 10px rgba(60, 232, 216, 0.25);
+}
+[data-theme="genshin"] .sgd-est-type-card.selected,
+[data-theme="genshin"] .sgd-est-grade-card.selected {
+    border-color: #3CE8D8;
+    background: rgba(60, 232, 216, 0.06);
+    box-shadow: 0 0 18px rgba(60, 232, 216, 0.25);
+}
+[data-theme="genshin"] .sgd-est-total-num {
+    color: #F7DC87;
+    text-shadow: 0 0 16px rgba(247, 220, 135, 0.45);
+}
+
+/* Genshin Modals */
+[data-theme="genshin"] .sgd-modal-dialog {
+    border-radius: 24px;
+    border: 1.5px solid rgba(229, 184, 79, 0.35);
+    box-shadow: 0 25px 60px rgba(11, 14, 27, 0.6), 0 0 35px rgba(60, 232, 216, 0.2);
+}
+[data-theme="genshin"] .sgd-modal-header {
+    background: rgba(18, 24, 43, 0.98);
+    border-bottom: 1px solid rgba(60, 232, 216, 0.2);
+}
+[data-theme="genshin"] .sgd-modal-title {
+    color: #FFFFFF;
+}
+[data-theme="genshin"] .sgd-category-badge {
+    background: rgba(60, 232, 216, 0.15);
+    color: #3CE8D8;
+    border: 1px solid rgba(60, 232, 216, 0.4);
+    border-radius: 9999px;
+}
+[data-theme="genshin"] .sgd-modal-tab-btn.active {
+    color: #3CE8D8;
+    border-color: #3CE8D8;
+    box-shadow: inset 0 -2px 0 #3CE8D8, 0 0 10px rgba(60, 232, 216, 0.25);
+}
+
+/* Mobile Drawer in Genshin Theme */
+[data-theme="genshin"] .sgd-drawer-panel {
+    background: #0E1223;
+    border-left: 1px solid rgba(60, 232, 216, 0.25);
+    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.7);
+}
+[data-theme="genshin"] .sgd-drawer-link.active,
+[data-theme="genshin"] .sgd-drawer-link:hover {
+    color: #F7DC87;
+    background: rgba(60, 232, 216, 0.08);
+}
+[data-theme="genshin"] .sgd-drawer-link i {
+    color: #3CE8D8;
+}
+
+/* Footer in Genshin Theme */
+[data-theme="genshin"] .sgd-site-footer {
+    background: #0B0E1B;
+    border-top: 1px solid rgba(60, 232, 216, 0.15);
+}
+[data-theme="genshin"] .sgd-footer-cta-band {
+    background: linear-gradient(135deg, #12182B 0%, #1B223D 50%, #0B0E1B 100%);
+    border-bottom: 1px solid rgba(229, 184, 79, 0.25);
+}
+[data-theme="genshin"] .sgd-footer-heading {
+    color: #FFFFFF;
+}
+[data-theme="genshin"] .sgd-footer-heading::after {
+    background: linear-gradient(90deg, #3CE8D8, #E5B84F);
+}
+[data-theme="genshin"] .sgd-footer-links li a:hover {
+    color: #3CE8D8;
+}
+[data-theme="genshin"] .sgd-footer-links li a i {
+    color: #E5B84F;
+}
+[data-theme="genshin"] .sgd-tag-pill {
+    background: rgba(60, 232, 216, 0.1);
+    color: #A8B8DE;
+    border: 1px solid rgba(60, 232, 216, 0.25);
+}
+
+/* Global Smooth Transitions */
+body,
+.sgd-topbar,
+.sgd-navbar,
+.sgd-btn,
+.sgd-service-card,
+.sgd-project-card,
+.sgd-value-card,
+.sgd-estimator-card,
+.sgd-modal-dialog,
+.sgd-site-footer {
+    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
 }

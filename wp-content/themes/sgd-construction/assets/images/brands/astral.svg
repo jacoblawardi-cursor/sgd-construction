@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Astral Aluminium Official Style Logo -->
+  <defs>
+    <linearGradient id="astralBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="astralCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="46" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+  <!-- Extruded Architectural 'A' Emblem -->
+  <g transform="translate(50, 36)">
+    <!-- Left Profile Leg -->
+    <path d="M -24 20 L -6 -24 L 2 -24 L -16 20 Z" fill="url(#astralBlue)"/>
+    <!-- Right Profile Leg -->
+    <path d="M 16 20 L -2 -24 L 6 -24 L 24 20 Z" fill="url(#astralCyan)"/>
+    <!-- Crossbar Beam -->
+    <rect x="-14" y="6" width="28" height="6" rx="2" fill="#0284C7"/>
+    <!-- Aluminium Profile Hole Notch -->
+    <circle cx="0" cy="-4" r="3" fill="#F8FAFC"/>
+  </g>
+  <!-- Astral Typography -->
+  <text x="50" y="74" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="10.5" font-weight="900" fill="#0F172A" text-anchor="middle" letter-spacing="2">ASTRAL</text>
+  <text x="50" y="85" font-family="'Montserrat', sans-serif" font-size="6.5" font-weight="800" fill="#0284C7" text-anchor="middle" letter-spacing="2.5">ALUMINIUM</text>
+</svg>

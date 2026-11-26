@@ -28,6 +28,20 @@ $table_prefix = 'wp_';
 /** For developers: WordPress debugging mode. */
 define( 'WP_DEBUG', false );
 
+/**
+ * Dynamic Site URL and Home URL
+ * Ensures styles, scripts, and links load properly regardless of whether
+ * accessing via localhost, 127.0.0.1, or custom ports like :8080.
+ */
+if ( isset( $_SERVER['HTTP_HOST'] ) ) {
+    $protocol = ( ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== 'off' ) ? 'https://' : 'http://';
+    define( 'WP_HOME', $protocol . $_SERVER['HTTP_HOST'] . '/sgd-construction' );
+    define( 'WP_SITEURL', $protocol . $_SERVER['HTTP_HOST'] . '/sgd-construction' );
+} else {
+    define( 'WP_HOME', 'http://127.0.0.1:8080/sgd-construction' );
+    define( 'WP_SITEURL', 'http://127.0.0.1:8080/sgd-construction' );
+}
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
